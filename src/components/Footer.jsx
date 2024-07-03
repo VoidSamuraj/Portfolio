@@ -16,7 +16,7 @@ export default function Footer() {
                         <i className="bx bxl-linkedin-square"></i>
                     </a>
                     <a href="mailto:karol.robak124@gmail.com">
-                        <i class='bx bxs-envelope' ></i>
+                        <i className='bx bxs-envelope' ></i>
                     </a>
                 </div>
                 <ul className="list">

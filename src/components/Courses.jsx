@@ -80,7 +80,7 @@ export default function Courses() {
                     </>
                   }
                   <div className="allCerts">
-                    <i class='bx bx-sort' ></i>
+                    <i className='bx bx-sort' ></i>
                   </div>
                 </th>
               </tr>
@@ -91,8 +91,16 @@ export default function Courses() {
                   (activeCategory == "All" || course.platform == activeCategory) &&
                   (hasCert == 1 || (hasCert == 2 && course.hasCert) || (hasCert == 3 && !course.hasCert))
                 ).sort((a, b) => {
+
+                  if (a.date === null || a.date == undefined) {
+                    return sortAsc ? -1 : 1;
+                  }
+                  if (b.date === null || b.date == undefined) {
+                    return sortAsc ? 1 : -1;
+                  }
                   const dateA = new Date(a.date);
                   const dateB = new Date(b.date);
+
                   if (dateA < dateB) {
                     return sortAsc ? -1 : 1;
                   }
@@ -116,7 +124,7 @@ export default function Courses() {
                         course.content &&
                         course.content.sort((a, b) => a.name.localeCompare(b.name))?.map((cnt) => (
 
-                          <span className={"badge"} style={{ background: `${cnt.color}` }}>{cnt.name}</span>
+                          <span  key={`${course.name}-${cnt.name}-${nr}`} className={"badge"} style={{ background: `${cnt.color}` }}>{cnt.name}</span>
                         ))
                       }
                     </td>

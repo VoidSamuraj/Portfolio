@@ -37,7 +37,6 @@ export default function ImageCarousel({
     return () => clearInterval(slideInterval);
   }, [autoSlide, autoSlideInterval, isHovered, isPlaying]);
 
-
   return (
     <div className="overflow-hidden relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div
@@ -54,6 +53,7 @@ export default function ImageCarousel({
                     className="scroll-item"
                     src={item.image}
                     alt={item.name}
+                    placeholder="blur"
                   />
                 </div>
               ) : (
@@ -74,6 +74,7 @@ export default function ImageCarousel({
                   className="scroll-item"
                   src={item.image}
                   alt={item.name}
+                  placeholder="blur"
                 />
               ) : (
                 <VideoPlayer

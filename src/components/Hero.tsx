@@ -67,6 +67,7 @@ export default function Hero() {
           alt="Avatar"
           width={450}
           height={450}
+          placeholder="blur"
         />
       </div>
       <Script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" strategy="beforeInteractive" />

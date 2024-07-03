@@ -39,11 +39,11 @@ const ModalComponent = ({ project, closeModal }) => {
               <span className='creationDate'>{project.createdAt}</span>
               <span className="close" onClick={()=>{setAnimationCompleted(false);  setTimeout(() => closeModal(), 500);}}>&times;</span>
             </div>
-            <div className={`card-content ${project.styles.includes("desktopGallery") ? "desktopGallery-parent" : (project.styles.includes("horizontalGallery") ? "horizontalGallery-parent" : "")}`}>
+            <div className={`card-content ${project.styles.includes("desktopGallery") ? "desktopGallery-parent" : (project.styles.includes("horizontalGallery") ? "horizontalGallery-parent" : "")} ${project.styles.includes("desktopGalleryNoScale") ? "desktopGalleryNoScale-parent":""}`}>
               <div className="content">
                 <h3>Description</h3>
                 {project.description?.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                  <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
                 ))}
                 {project.features && (
                   <>

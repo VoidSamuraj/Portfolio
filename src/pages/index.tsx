@@ -39,7 +39,13 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => setIsPageLoaded(true), 4000);
     window.scrollTo(0, 0); 
+    const allImages = document.querySelectorAll('img');
+
   }, []);
+
+
+
+
 
   return (
     <>
@@ -56,10 +62,10 @@ export default function Home() {
       <div className={`loader-container ${isPageLoaded ? "hidden" : ""}`}>
         <div className="loader">
           <svg viewBox="0 0 400 160" className="mySvg">
-            <text x="29%" y="50%" dy=".32rem" text-anchor="middle" className="text-body">
+            <text x="29%" y="50%" dy=".32rem" textAnchor="middle" className="text-body">
               Karol
             </text>
-            <text x="61%" y="50%" dy=".32rem" dx="3rem" text-anchor="middle" className="text-body">
+            <text x="61%" y="50%" dy=".32rem" dx="3rem" textAnchor="middle" className="text-body">
               Robak
             </text>
           </svg>

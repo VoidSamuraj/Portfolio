@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion"
 
-export default function Projects({ projects, onClick }) {
+export default function Projects({ projects, onClick}) {
 
     return (
         <>
@@ -27,7 +27,7 @@ export default function Projects({ projects, onClick }) {
                                     className="gallery-item" key={index} 
                                     onClick={() => { window.open(page.githubLink, '_blank', 'noopener,noreferrer') }} 
                                     style={{ background: "black" }}>
-                                    <i class='bx bxl-github' style={{ width: '100%', height: '100%', display: 'inline-block', textAlign: 'center', alignContent: "center", fontSize: "30rem" }}></i>
+                                    <i className='bx bxl-github' style={{ width: '100%', height: '100%', display: 'inline-block', textAlign: 'center', alignContent: "center", fontSize: "30rem" }}></i>
                                     <div className="overlay">
                                         <h3>{page.title}</h3>
                                         <p>{page.shortDescription}</p>
@@ -41,7 +41,8 @@ export default function Projects({ projects, onClick }) {
                                     viewport={{ once: true }}
                                     className="gallery-item" key={index} 
                                     onClick={() => { onClick(page.title) }}>
-                                    <Image src={page.preview} alt={`${page.title} preview`} className="gallery-image" />
+                                    <Image src={page.preview} alt={`${page.title} preview`} className="gallery-image" 
+                    placeholder="blur"/>
                                     <div className="overlay">
                                         <h3>{page.title}</h3>
                                         <p>{page.shortDescription}</p>

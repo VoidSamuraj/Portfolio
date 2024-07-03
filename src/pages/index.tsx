@@ -18,6 +18,8 @@ export default function Home() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   const projects = [scaraPage, iosPage, lumbzePage, vtsPage, seamPage, lotPage, tetrisPage, githubPage]
   const pages = ['Home', 'Projects', 'Education'];
   const [modalProject, setModalProject] = useState<Project | null>(null);
@@ -35,15 +37,22 @@ export default function Home() {
     console.log("xddd")
     setIsMenuOpen(!isMenuOpen);
   };
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 800);
+  };
 
   useEffect(() => {
     setTimeout(() => setIsPageLoaded(true), 4000);
     window.scrollTo(0, 0); 
-    const allImages = document.querySelectorAll('img');
 
+    handleResize(); 
+    window.addEventListener('resize', handleResize); 
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-
+  useEffect(() => {
+    console.log(isMobile); // Sprawdzenie, czy isMobile się zmienia
+  }, [isMobile]);
 
 
 
@@ -99,7 +108,7 @@ export default function Home() {
         </section>
 
         <section className={`projects ${isPageLoaded ? "visible" : ""}`} id="projects">
-          <Projects projects={projects} onClick={openModal} />
+          <Projects projects={projects} onClick={openModal} isMobile={isMobile}/>
         </section>
         <section className={`education ${isPageLoaded ? "visible" : ""}`} id="education">
           <Courses />

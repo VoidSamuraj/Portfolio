@@ -184,3 +184,14 @@ td>i{
   top: 5px;
 } 
 }
+
+@media (max-width:500px){
+  .category-item {
+    padding: 5px 10px;
+  }
+}
+@media (max-width:500px){
+  .category-selector {
+    flex-wrap: wrap;
+  }
+}

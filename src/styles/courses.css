@@ -79,6 +79,9 @@
 .order-table tr>td:nth-child(5) {
   text-align: center;
 }
+.order-table tr>td:nth-child(2){
+  min-width: 150px;
+}
 
 td>i {
   font-size: 3rem;

@@ -287,7 +287,7 @@ export const tetrisPage: Project = {
   preview: tetrisMockup,
   createdAt: "2021",
   badges: [{ link: "https://img.shields.io/badge/HTML-orange", alt: "HTML" }, { link: "https://img.shields.io/badge/JavaScript-yellow", alt: "JavaScript" }, { link: "https://img.shields.io/badge/CSS-blue", alt: "CSS" }],
-  styles: "desktopGallery",
+  styles: "desktopGallery fixedSize",
 };
 
 // Strona iOS Planner

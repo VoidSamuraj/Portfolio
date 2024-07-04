@@ -51,16 +51,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(isMobile); // Sprawdzenie, czy isMobile się zmienia
+    console.log(isMobile);
   }, [isMobile]);
 
-
-
   return (
-    <div style={{overflow: `${modalProject != null? "hidden":"auto"}`}}>
+    <>
       <Head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait" />
         <title>Karol Robak</title>
         <link
           rel="stylesheet"
@@ -117,7 +115,7 @@ export default function Home() {
       <Footer />
       <ModalComponent project={modalProject} closeModal={closeModal} />
 
-    </div>
+    </>
 
   );
 }

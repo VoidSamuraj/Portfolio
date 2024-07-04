@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ImageCarousel from "../components/ImageCarousel";
 import { motion, AnimatePresence } from 'framer-motion';
+import { RemoveScroll } from 'react-remove-scroll';
 
 const ModalComponent = ({ project, closeModal }) => {
 
-  const [animationCompleted, setAnimationCompleted] = useState(false);
   return (
     <AnimatePresence>
       {project != null && (
@@ -13,28 +13,16 @@ const ModalComponent = ({ project, closeModal }) => {
           initial={{ opacity: 0}}
           animate={{ opacity: 1}}
           exit={{ opacity: 0 }}
-          onAnimationComplete={(definition) => {
-            console.log(definition)
-            if (definition.opacity == 1) {
-              setAnimationCompleted(true);
-            }
-            if (definition.opacity == 0) {
-              setAnimationCompleted(false);
-            }
-          }}
           transition={{ duration: 0.5 }}
-          className={`modal-wrapper ${animationCompleted?"":""}`}
-          onClick={()=>{setAnimationCompleted(false);   setTimeout(() => closeModal(), 100);}}
+          className={'modal-wrapper'}
+          onClick={()=>{ setTimeout(() => closeModal(), 100);}}
         >
-
-
-
-          <div className="modal-content"
+          <RemoveScroll className="modal-content"
            onClick={(event) => event.stopPropagation()}>
             <div>
               <h2>{project.title}</h2>
               <span className='creationDate'>{project.createdAt}</span>
-              <span className="close" onClick={()=>{setAnimationCompleted(false);  setTimeout(() => closeModal(), 500);}}>&times;</span>
+              <span className="close" onClick={()=>{ setTimeout(() => closeModal(), 500);}}>&times;</span>
             </div>
             <div className={`card-content ${project.styles.includes("desktopGallery") ? "desktopGallery-parent" :
                (project.styles.includes("horizontalGallery") ? "horizontalGallery-parent" : 
@@ -80,7 +68,7 @@ const ModalComponent = ({ project, closeModal }) => {
                 ))}
               </div>
             )}
-          </div>
+          </RemoveScroll>
 
         </motion.div>
       )}

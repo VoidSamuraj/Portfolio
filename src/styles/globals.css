@@ -371,6 +371,9 @@ span {
   section {
     padding: 10rem 6% 2rem;
   }
+  .header{
+    padding: 3rem 12% 3rem;
+  }
 }
 
 
@@ -381,8 +384,8 @@ span {
 }
 
 @media(max-width:1000px) {
-  header {
-    padding: 2rem 3%;
+  .header {
+    padding: 2rem 8%;
   }
 
   section {

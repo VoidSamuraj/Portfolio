@@ -23,23 +23,24 @@ const ModalComponent = ({ project, closeModal }) => {
             }
           }}
           transition={{ duration: 0.5 }}
-          className={`modal-wrapper ${animationCompleted?"completed":""}`}
+          className={`modal-wrapper ${animationCompleted?"":""}`}
           onClick={()=>{setAnimationCompleted(false);   setTimeout(() => closeModal(), 100);}}
         >
-          <motion.div
-          key={project ? project.title : ""}
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          exit={{ scale: 0.9 }}
-          transition={{ duration: 0.5 }} 
-          className="modal-content"
+
+
+
+          <div className="modal-content"
            onClick={(event) => event.stopPropagation()}>
             <div>
               <h2>{project.title}</h2>
               <span className='creationDate'>{project.createdAt}</span>
               <span className="close" onClick={()=>{setAnimationCompleted(false);  setTimeout(() => closeModal(), 500);}}>&times;</span>
             </div>
-            <div className={`card-content ${project.styles.includes("desktopGallery") ? "desktopGallery-parent" : (project.styles.includes("horizontalGallery") ? "horizontalGallery-parent" : "")} ${project.styles.includes("desktopGalleryNoScale") ? "desktopGalleryNoScale-parent":""}`}>
+            <div className={`card-content ${project.styles.includes("desktopGallery") ? "desktopGallery-parent" :
+               (project.styles.includes("horizontalGallery") ? "horizontalGallery-parent" : 
+               ((project.styles.includes("ios") || project.styles.includes("phoneGallery")) ? "phoneGallery-parent" : "")
+              )} 
+               ${project.styles.includes("desktopGalleryNoScale") ? "desktopGalleryNoScale-parent":""}`}>
               <div className="content">
                 <h3>Description</h3>
                 {project.description?.map((paragraph, index) => (
@@ -79,7 +80,8 @@ const ModalComponent = ({ project, closeModal }) => {
                 ))}
               </div>
             )}
-          </motion.div>
+          </div>
+
         </motion.div>
       )}
     </AnimatePresence>

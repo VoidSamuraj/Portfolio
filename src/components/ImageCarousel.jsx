@@ -92,7 +92,7 @@ export default function ImageCarousel({
           <div className="absolute inset-y-0 left-0 flex items-center justify-start p-4 pointer-events-none">
             <button
               onClick={prev}
-              className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white pointer-events-auto"
+              className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white pointer-events-auto button-next-prev"
             >
               <ChevronLeft size={40} />
             </button>
@@ -101,7 +101,7 @@ export default function ImageCarousel({
           <div className="absolute inset-y-0 right-0 flex items-center justify-end p-4 pointer-events-none">
             <button
               onClick={next}
-              className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white pointer-events-auto"
+              className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white pointer-events-auto button-next-prev"
             >
               <ChevronRight size={40} />
             </button>

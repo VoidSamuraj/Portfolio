@@ -241,7 +241,7 @@ export const vtsPage: Project = {
   gallery: vtsData,
   preview: vtsMockup,
   createdAt: "2023",
-  styles: "desktopGallery desktopGalleryThick fixedSize",
+  styles: "desktopGallery fixedSize",
   inDiv: true
 };
 
@@ -287,7 +287,7 @@ export const tetrisPage: Project = {
   preview: tetrisMockup,
   createdAt: "2021",
   badges: [{ link: "https://img.shields.io/badge/HTML-orange", alt: "HTML" }, { link: "https://img.shields.io/badge/JavaScript-yellow", alt: "JavaScript" }, { link: "https://img.shields.io/badge/CSS-blue", alt: "CSS" }],
-  styles: "desktopGallery desktopGalleryThick",
+  styles: "desktopGallery",
 };
 
 // Strona iOS Planner

@@ -225,6 +225,7 @@
     width: 300px;
     margin-top: 6rem;
     margin-bottom: 5rem;
+    filter: drop-shadow(0 0 18px var(--main-color));
   }
 }
 
@@ -246,6 +247,7 @@
     width: 200px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    filter: drop-shadow(0 0 15px var(--main-color));
   }
 
   home-content h1 {

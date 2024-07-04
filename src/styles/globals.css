@@ -318,7 +318,6 @@ span {
 
 
 .scrollbar {
-  scrollbar-width: thin;
   /* szerokość paska przewijania */
   scrollbar-color: var(--main-color-shadow-noa) var(--main-color-shadow-noa);
   /* kolor kciuka i tła przewijania */
@@ -384,6 +383,11 @@ span {
 }
 
 @media(max-width:1000px) {
+  
+::-webkit-scrollbar {
+  width: 10px;
+  /* szerokość paska przewijania */
+}
   .header {
     padding: 2rem 8%;
   }
@@ -507,6 +511,11 @@ span {
 }
 
 @media (max-width:600px) {
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    /* szerokość paska przewijania */
+  }
 
   .navbar.open {
     width: 100%;

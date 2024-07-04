@@ -153,8 +153,12 @@ th.button:hover .allCerts .bxs-certification:nth-last-of-type(2){
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
-
-
+.education td>a{
+  text-decoration: underline;
+}
+.education td>a:hover{
+  color: var(--main-color);
+}
 @media (max-width:990px){
   .education{
     padding: 5rem 0;

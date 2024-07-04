@@ -18,7 +18,7 @@ export default function Courses() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="heading">
-          My <span>Courses</span>
+        My <span>Courses</span>
       </motion.h2>
       <div className="card">
 
@@ -110,13 +110,20 @@ export default function Courses() {
                   return 0;
                 })?.map((course, nr) => (
                   <motion.tr
-                  key={course.name+activeCategory}
-                  initial={{ opacity: 0, y: 10, borderBottomWidth: 0}}
-                  animate={{ opacity: 1, y: 0,borderBottomWidth: "1px"}}
-                  transition={{ duration: 1, delay: nr * 0.1 }}
-                >
+                    key={course.name + activeCategory}
+                    initial={{ opacity: 0, y: 10, borderBottomWidth: 0 }}
+                    animate={{ opacity: 1, y: 0, borderBottomWidth: "1px" }}
+                    transition={{ duration: 1, delay: nr * 0.1 }}
+                  >
                     <td>{nr + 1}</td>
-                    <td>{course.name}</td>
+                    <td>{
+                      course.link != null ? (
+                        <a href={course.link} target="_blank">{course.name}</a>
+                      ) : (
+                       course.name
+                      )
+                    }
+                    </td>
                     <td>{
                       <span className={`badge ${course.platform}`}>{course.platform}</span>}</td>
                     <td>
@@ -124,7 +131,7 @@ export default function Courses() {
                         course.content &&
                         course.content.sort((a, b) => a.name.localeCompare(b.name))?.map((cnt) => (
 
-                          <span  key={`${course.name}-${cnt.name}-${nr}`} className={"badge"} style={{ background: `${cnt.color}` }}>{cnt.name}</span>
+                          <span key={`${course.name}-${cnt.name}-${nr}`} className={"badge"} style={{ background: `${cnt.color}` }}>{cnt.name}</span>
                         ))
                       }
                     </td>

@@ -64,6 +64,8 @@ export default function Home() {
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
       </Head>
 
       <div className={`loader-container ${isPageLoaded ? "hidden" : ""}`}>

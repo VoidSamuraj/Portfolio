@@ -1,7 +1,9 @@
 import Image from "next/image";
 import avatar from "../assets/images/avatar/avatar.jpg"
 import Script from "next/script";
-
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { FontAwesomeIcon }from "@fortawesome/react-fontawesome" 
+import {faMobileScreen, faCode, faDesktop, faDatabase}  from "@fortawesome/free-solid-svg-icons" 
 export default function Hero() {
 
   return (
@@ -21,19 +23,21 @@ export default function Hero() {
         <table className="skills-list">
           <tbody>
           <tr className="skills-item">
-            <td><i className="fas fa-mobile-alt"></i></td>
+            <td><FontAwesomeIcon icon={faMobileScreen} /></td>
             <td><span>Android Development: Kotlin/Java, Jetpack Compose</span></td>
           </tr>
           <tr className="skills-item">
-            <td><i className="fas fa-code"></i></td>
+            <td><FontAwesomeIcon icon={faCode}/></td>
             <td><span>Web Development: HTML, JavaScript, CSS, React</span></td>
           </tr>
           <tr className="skills-item">
-            <td><i className="fas fa-desktop"></i></td>
+            <td>
+            <FontAwesomeIcon icon={faDesktop} />
+            </td>
             <td><span>Desktop Applications: Java, JavaFX, C/C++</span></td>
           </tr>
           <tr className="skills-item">
-            <td><i className="fas fa-database"></i></td>
+            <td><FontAwesomeIcon icon={faDatabase} /></td>
             <td><span>Other Technologies: Firebase, Python</span></td>
           </tr>
           </tbody>

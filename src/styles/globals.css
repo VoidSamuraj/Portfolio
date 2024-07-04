@@ -511,7 +511,6 @@ span {
 }
 
 @media (max-width:600px) {
-
   ::-webkit-scrollbar {
     width: 5px;
     /* szerokość paska przewijania */

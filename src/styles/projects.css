@@ -835,6 +835,9 @@
   padding-right: 1rem;
   padding-bottom: 1rem ;
  }
+ .card-content {
+  margin-top: 120px;
+ }
 }
 
 @media (max-width:450px) {
@@ -895,7 +898,9 @@
    .modal-wrapper .modal-content>div:first-of-type {
     padding-top: 10px;
    }
-
+   .card-content {
+    margin-top: 100px;
+   }
 }
 
 @media (max-width:400px) {
@@ -911,6 +916,13 @@
   padding-bottom: 0;
   height: 4rem;
  }
+ .card-content {
+  margin-top: 90px;
+ }
+ 
+ .gallery{
+  margin-bottom: 30px;
+}
 }
 
 @media (max-width:350px) {
@@ -960,6 +972,12 @@
    .modal-wrapper .creationDate {
         font-size: 1.5rem;
    }
+   .card-content {
+    margin-top: 80px;
+   }
+   .gallery{
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width:300px) {
@@ -990,6 +1008,12 @@
 }
 .modal-content h2 {
   font-size: 1.7rem;
+}
+.card-content {
+ margin-top: 60px;
+}
+.gallery{
+ margin-bottom: 10px;
 }
 }
 @media (pointer:none), (pointer:coarse){

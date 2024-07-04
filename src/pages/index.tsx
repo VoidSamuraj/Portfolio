@@ -4,7 +4,7 @@ import Projects from "../components/Projects";
 import Courses from "../components/Courses";
 import Footer from "../components/Footer";
 import ModalComponent from "../components/ModalComponent"
-import { Link} from 'react-scroll';
+import { Link } from 'react-scroll';
 import { Project } from "../data/projectsData";
 
 
@@ -26,7 +26,7 @@ export default function Home() {
 
   const openModal = (projectTittle: string) => {
     const project = projects.find((project) => project.title === projectTittle);
-    if(project != undefined)
+    if (project != undefined)
       setModalProject(project);
   };
 
@@ -43,10 +43,10 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => setIsPageLoaded(true), 4000);
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
 
-    handleResize(); 
-    window.addEventListener('resize', handleResize); 
+    handleResize();
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -57,17 +57,17 @@ export default function Home() {
 
 
   return (
-    <>
-            <Head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Karol Robak</title>
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-          />
-        </Head>
-        
+    <div style={{overflow: `${modalProject != null? "hidden":"auto"}`}}>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Karol Robak</title>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        />
+      </Head>
+
       <div className={`loader-container ${isPageLoaded ? "hidden" : ""}`}>
         <div className="loader">
           <svg viewBox="0 0 400 160" className="mySvg">
@@ -82,42 +82,42 @@ export default function Home() {
       </div>
 
       <header className={`header ${isPageLoaded ? "visible" : ""}`}>
-          <a href="#home" className="logo">
-            Karol <span>Robak</span>
-          </a>
-          <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'}`} id="menu-icon" onClick={toggleMenu} />
+        <a href="#home" className="logo">
+          Karol <span>Robak</span>
+        </a>
+        <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'}`} id="menu-icon" onClick={toggleMenu} />
 
-<nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
-  {pages?.map((page, index) => (
-    <Link
-      key={index}
-      to={page.toLowerCase()}
-      spy={true}
-      smooth={true}
-      duration={300}
-      onClick={() => setIsMenuOpen(false)} // Zamknij menu po kliknięciu na link
-    >
-      {page}
-    </Link>
-  ))}
-</nav>
-        </header>
+        <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
+          {pages?.map((page, index) => (
+            <Link
+              key={index}
+              to={page.toLowerCase()}
+              spy={true}
+              smooth={true}
+              duration={300}
+              onClick={() => setIsMenuOpen(false)} // Zamknij menu po kliknięciu na link
+            >
+              {page}
+            </Link>
+          ))}
+        </nav>
+      </header>
 
-        <section className={`home ${isPageLoaded ? "visible" : ""}`} id="home">
-          <Hero />
-        </section>
+      <section className={`home ${isPageLoaded ? "visible" : ""}`} id="home">
+        <Hero />
+      </section>
 
-        <section className={`projects ${isPageLoaded ? "visible" : ""}`} id="projects">
-          <Projects projects={projects} onClick={openModal} isMobile={isMobile}/>
-        </section>
-        <section className={`education ${isPageLoaded ? "visible" : ""}`} id="education">
-          <Courses />
-        </section>
+      <section className={`projects ${isPageLoaded ? "visible" : ""}`} id="projects">
+        <Projects projects={projects} onClick={openModal} isMobile={isMobile} />
+      </section>
+      <section className={`education ${isPageLoaded ? "visible" : ""}`} id="education">
+        <Courses />
+      </section>
 
-        <Footer />
-        <ModalComponent project={modalProject} closeModal={closeModal} />
+      <Footer />
+      <ModalComponent project={modalProject} closeModal={closeModal} />
 
-    </>
-    
+    </div>
+
   );
 }

@@ -15,7 +15,6 @@ import {
   seamPagePl, tetrisPagePl, iosPagePl, githubPagePl 
 } from "../data/projectsData"
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 
 
 export default function Home() {
@@ -25,8 +24,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter();
-  const {locale} = router;
+  const [locale,setLocale] = useState('en');
  
   const projects = locale === 'pl' ?[scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
   const pages = ['Home', 'Projects', 'Education'];
@@ -56,6 +54,9 @@ export default function Home() {
 
     handleResize();
     window.addEventListener('resize', handleResize);
+
+    setLocale(localStorage.getItem('locale') || 'en');
+
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 

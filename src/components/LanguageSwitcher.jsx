@@ -1,14 +1,10 @@
-import { useRouter } from 'next/router';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef} from 'react';
 
 const LanguageSwitcher = () => {
-  const router = useRouter();
-  const { locale, asPath } = router;
-  const [selectedLocale, setSelectedLocale] = useState(locale);
+  const [locale, setLocale]= useState("en");
 
   const onOptionSelect  = (newLocale) => {
-    setSelectedLocale(newLocale);
-    router.push(asPath, asPath, { locale: newLocale });
+    setLocale(newLocale);
     window.location.reload();
   };
   const options = ['pl', 'en']
@@ -21,7 +17,8 @@ const LanguageSwitcher = () => {
   };
 
   const handleOptionClick = (option) => {
-    onOptionSelect(option);
+     localStorage.setItem('locale',option);
+     window.location.reload();
     setIsOpen(false);
   };
 
@@ -33,15 +30,17 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
+    setLocale(localStorage.getItem('locale') || 'en');
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
+
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button onClick={toggleDropdown} className="dropdownToggle">
-        {selectedLocale.toUpperCase()} <i className='arrow bx bx-chevron-down'></i>
+        {locale.toUpperCase()} <i className='arrow bx bx-chevron-down'></i>
       </button>
       {isOpen && (
         <ul className="dropdownMenu">

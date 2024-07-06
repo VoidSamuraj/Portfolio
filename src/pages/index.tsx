@@ -76,7 +76,7 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait" />
         <title>Karol Robak</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="shortcut icon"  type="image/png" href="/favicon.png?" />
         <link
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"

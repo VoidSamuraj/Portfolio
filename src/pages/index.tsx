@@ -12,7 +12,7 @@ import {
   scaraPageEn, lumbzePageEn, lotPageEn, vtsPageEn,
   seamPageEn, tetrisPageEn, iosPageEn, githubPageEn,
   scaraPagePl, lumbzePagePl, lotPagePl, vtsPagePl,
-  seamPagePl, tetrisPagePl, iosPagePl, githubPagePl 
+  seamPagePl, tetrisPagePl, iosPagePl, githubPagePl
 } from "../data/projectsData"
 import { useEffect, useState } from "react";
 
@@ -30,9 +30,9 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-  const [locale,setLocale] = useState('en');
- 
-  const projects = locale === 'pl' ?[scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
+  const [locale, setLocale] = useState('en');
+
+  const projects = locale === 'pl' ? [scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl] : [scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
   const pages = ['Home', 'Projects', 'Education'];
   const pagesPl = ['O mnie', 'Projekty', 'Kursy'];
   const [modalProject, setModalProject] = useState<Project | null>(null);
@@ -76,12 +76,18 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait" />
         <title>Karol Robak</title>
-        <link rel="shortcut icon"  type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff"></meta>
         <link
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
       </Head>
 
@@ -114,15 +120,15 @@ export default function Home() {
               duration={300}
               onClick={() => setIsMenuOpen(false)} // Zamknij menu po kliknięciu na link
             >
-              {locale === 'pl'?pagesPl[index]:page}
+              {locale === 'pl' ? pagesPl[index] : page}
             </Link>
           ))}
-          <LanguageSwitcher/>
+          <LanguageSwitcher />
         </nav>
       </header>
 
       <section className={`home ${isPageLoaded ? "visible" : ""}`} id="home">
-        <Hero locale={locale}/>
+        <Hero locale={locale} />
       </section>
 
       <section className={`projects ${isPageLoaded ? "visible" : ""}`} id="projects">

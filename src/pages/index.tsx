@@ -100,7 +100,7 @@ export default function Home() {
 
       <header className={`header ${isPageLoaded ? "visible" : ""}`}>
         <a href="#home" className="logo">
-          K<span>R</span>
+          Karol <span>Robak</span>
         </a>
         <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'}`} id="menu-icon" onClick={toggleMenu} />
 

@@ -17,12 +17,6 @@ import {
 import { useEffect, useState } from "react";
 
 
-export const metadata = {
-  icons: {
-    icon: '/favicon.png',
-  },
-}
-
 export default function Home() {
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -76,7 +70,7 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait" />
         <title>Karol Robak</title>
-        <link rel="icon"  type="image/png" href="/myfavicon.png" />
+        <link rel="icon"  type="image/png" href="/Portfolio/myfavicon.png" />
         <link
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"

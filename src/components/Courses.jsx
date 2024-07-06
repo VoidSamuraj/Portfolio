@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import coursesData from "../data/coursesData"
+import {coursesDataPl, coursesDataEn} from "../data/coursesData"
 import { motion } from "framer-motion"
 
-export default function Courses() {
+export default function Courses({ locale }) {
 
   const [activeCategory, setActiveCategory] = useState('All');
   const [hasCert, setHasCert] = useState(1);
   const [sortAsc, setSortAsc] = useState(false);
 
-  const categories = ['All', 'Coursera', 'strefakursow.pl', 'Udemy', "Cisco"];
+  const categories = [ 'All', 'Coursera', 'strefakursow.pl', 'Udemy', "Cisco"];
+  const categoriesPl = [ 'Wszystkie', 'Coursera', 'strefakursow.pl', 'Udemy', "Cisco"] 
 
   return (
     <>
@@ -18,18 +19,27 @@ export default function Courses() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="heading">
-        My <span>Courses</span>
+        {
+          locale === 'pl' ? (<>
+            Moje <span>Kursy</span>
+          </>) : (<>
+            My <span>Courses</span>
+          </>)
+        }
       </motion.h2>
       <div className="card">
 
         <div className="category-selector">
-          {categories?.map((category) => (
+          {categories?.map((category,index) => (
             <div
               key={category}
               className={`category-item ${activeCategory === category ? 'active' : ''}`}
               onClick={() => setActiveCategory(category)}
             >
-              {category}
+              {
+                locale ==='pl'?
+                categoriesPl[index]:category
+              }
             </div>
           ))}
         </div>
@@ -38,17 +48,17 @@ export default function Courses() {
           <table className="order-table">
             <thead className="no-select">
               <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>Platform</th>
-                <th>Content</th>
+                <th>{locale ==='pl'?'Nr.':'No.'}</th>
+                <th>{locale ==='pl'?'Nazwa':'Name'}</th>
+                <th>{locale ==='pl'?'Platforma':'Platform'}</th>
+                <th>{locale ==='pl'?'Zawartość':'Content'}</th>
                 <th className="button" onClick={() => (
                   setHasCert(hasCert == 3 ? 1 : hasCert + 1)
                 )}>
                   {
                     <>
-                      <p>Has Certificate</p>
-                      <p>Certificate</p>
+                      <p>{locale ==='pl'?'Ma Certyfikat':'Has Certificate'}</p>
+                      <p>{locale ==='pl'?'Certyfikat':'Certificate'}</p>
                     </>
                   }
                   {hasCert == 1 ? (
@@ -75,8 +85,8 @@ export default function Courses() {
                 )}>
                   {
                     <>
-                      <p>Completion Date</p>
-                      <p>Date</p>
+                    <p>{locale ==='pl'?'Data ukończenia':'Completion Date'}</p>
+                    <p>{locale ==='pl'?'Data':'Date'}</p>
                     </>
                   }
                   <div className="allCerts">
@@ -86,7 +96,8 @@ export default function Courses() {
               </tr>
             </thead>
             <tbody>
-              {coursesData
+              {
+              (locale === 'pl'?coursesDataPl:coursesDataEn)
                 .filter(course =>
                   (activeCategory == "All" || course.platform == activeCategory) &&
                   (hasCert == 1 || (hasCert == 2 && course.hasCert) || (hasCert == 3 && !course.hasCert))
@@ -120,7 +131,7 @@ export default function Courses() {
                       course.link != null ? (
                         <a href={course.link} target="_blank">{course.name}</a>
                       ) : (
-                       course.name
+                        course.name
                       )
                     }
                     </td>

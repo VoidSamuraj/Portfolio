@@ -44,18 +44,17 @@ import { StaticImageData } from "next/image"
 export interface ImageGalleryItem {
   type: "image" | "video";
   name: string;
-  image?: StaticImageData; // tylko dla type: "image"
-  src?: string; // tylko dla type: "video"
+  image?: StaticImageData; // only for: "image"
+  src?: string; // only for: "video"
 }
 
 export interface VideoToStylesData extends ImageGalleryItem {
   type: "image" | "video";
   name: string;
-  image?: StaticImageData; // tylko dla type: "image"
-  src?: string; // tylko dla type: "video"
+  image?: StaticImageData; // only for: "image"
+  src?: string; // only for: "video"
 }
 
-// Definicje danych dla poszczególnych projektów
 export const lumbzeData: ImageGalleryItem[] = [
   { type: "image", name: "Home", image: lumbze1 },
   { type: "image", name: "Game screen", image: lumbze2 },
@@ -114,35 +113,37 @@ export interface Project {
     link: string;
     alt: string;
   }[];
-  gallery?: ImageGalleryItem[]; // używamy interfejsu ImageGalleryItem
+  gallery?: ImageGalleryItem[]; 
   preview?: StaticImageData;
   createdAt?: string;
   styles?: string;
   inDiv?: boolean;
-  mobile?: boolean; // opcjonalny parametr dla projektów mobilnych
+  mobile?: boolean;
   github?: boolean
 }
 
-// Dane dla poszczególnych stron projektów
-export const scaraPage: Project = {
+
+// En - locale
+
+export const scaraPageEn: Project = {
   id: 1,
   title: "Scara Arm",
   shortDescription: "The Ktor server app lets users control a SCARA arm through a web interface, allowing movements and command execution.",
   description: [
-    "Ktor server app to controll scara arm. App allows free movement, load and execute " +
-    "commands written in G-Code(simple movement at now). Every user have own account and " +
-    "files stored in h2 database.",
-    "User interface is a website with Three.js to display arm and allow user to interact. I use " +
-    "Kotlin code to control the arm, it connects to the port and communicates with arduino. " +
-    "There is also special function to translate G-Code to my \"Scara Code\". From other side is " +
-    "arduino which control motors and communicate with server. Server is a simple orangePi " +
-    "board with Ubuntu server"
+    "Ktor server app to control Scara arm. The app allows free movement, loading and execution " +
+    "commands written in G-Code (simple movement at the moment). Every user has their own account and " +
+    "files stored in the H2 database.",
+    "The user interface is a website with Three.js to display arm and allow users to interact. I use " +
+    "Kotlin code to control the arm, it connects to the port and communicates with Arduino. " +
+    "There is also a special function to translate G-Code to my \"Scara Code\". From the other side is " +
+    "Arduino which controls motors and communicates with the server. Server is a simple orangePi " +
+    "board with an Ubuntu server"
   ],
   features: [
-    "moving the robotic arm manually (only on a computer).",
-    "moving robotic arm by G-Code file.",
-    "visualization of the G-Code file, arm movement.",
-    "accounts and private files."
+    "moving the robotic arm manually (only on a computer)",
+    "moving robotic arm by G-Code file",
+    "visualization of the G-Code file, arm movement",
+    "accounts and private files"
   ],
   githubLink: "https://github.com/VoidSamuraj/ScaraArm",
   badges: [
@@ -158,15 +159,15 @@ export const scaraPage: Project = {
   styles: "desktopGallery fixedSize",
   inDiv: true
 };
-export const lumbzePage: Project = {
+export const lumbzePageEn: Project = {
   id: 2,
   title: "Lumbze",
-  shortDescription: "A simple game where you solve circular mazes, earn points, and compete with others.",
+  shortDescription: "A simple game where you solve circular mazes, earn points and compete with others.",
   description: [
-    "Simple game where you solve circular mazes, earn points and can unlock new ball styles and see the best on the podium.",
-    "App written with Jetpack Compose and Using ViewModel. Authentification is delivered by Google. " +
-    "App uses Firebase and Room Database to store data. There is also playing music by AudioManager and MediaPlayer.",
-    "This app is a step further in building clean code, Room Database and ViewModel is a great improvement from my previous app. " +
+    "Simple game where you solve circular mazes, earn points, unlock new ball styles and see the best on the podium.",
+    "The app was written with Jetpack Compose and ViewModel. Authentification is delivered by Google. " +
+    "The app uses Firebase and RoomDB to store data. There is also music being played by AudioManager and MediaPlayer.",
+    "This app is a step further in building clean code. Room Database and ViewModel are a great improvement from my previous app. " +
     "Different approach in app building allowed me to create app faster."
   ],
   features: [
@@ -189,31 +190,30 @@ export const lumbzePage: Project = {
   mobile: true,
 };
 
-// Strona Lord Of Time
-export const lotPage: Project = {
+export const lotPageEn: Project = {
   id: 3,
   title: "Lord Of Time",
-  shortDescription: "This planner app helps you manage time, create tasks, set routines, and receive notifications, with access to data across devices and insightful usage charts.",
+  shortDescription: "This planner app helps you manage time, create tasks, set routines and receive notifications, with access to data across devices and insightful usage charts.",
   description: [
     "The app is designed to help you manage your time more effectively. You can use it to create " +
-    "tasks, categorize them, and set start and end times. The app allows you to establish " +
-    "routines and receive notifications on your device. It provides statistics on today's work " +
-    "time, charts for comparing previous dates, and a chart showing your app usage over the last " +
+    "tasks, categorize them and set start and end times. The app allows you to establish " +
+    "routines and receive notifications on your device. It provides statistics on today's work, " +
+    "time, charts for comparing previous dates and a chart showing your app usage over the last " +
     "24 hours. You can also enter your birth date and set an estimated timeline to remind you of " +
     "the passing of time. Additionally, the app offers the option to create an account and access " +
     "your data from any device.",
-    "My first project in Kotlin, using XML. Data is stored on device by SQLite and on Firebase " +
-    "server. To notify user I used services. I made charts by extending View class. I also added " +
-    "scrollable view which allows to add task when clicked.",
-    "It was my first big project, which allowed me to learned a lot about views, services and android overall."
+    "My first project in Kotlin, using XML. Data is stored on the device by SQLite and on Firebase. " +
+    "To notify the user I used services. I made charts by extending the View class. I also added " +
+    "scrollable view, which allows you to add task when clicked.",
+    "It was my first big project, which allowed me to learn a lot about views, services and Android overall."
   ],
   features: [
-    "create own account and log in on different devices.",
-    "create and track tasks.",
-    "set task repetition.",
-    "set categories for tasks.",
-    "set your daily goals and track progress.",
-    "notification when it's time for a task."
+    "create own account and log in on different devices",
+    "create and track tasks",
+    "set task repetition",
+    "set categories for tasks",
+    "set your daily goals and track progress",
+    "notification when it's time for a task and when it is finished"
   ],
   githubLink: "https://github.com/VoidSamuraj/LordOfTime",
   badges: [
@@ -229,13 +229,12 @@ export const lotPage: Project = {
   mobile: true,
 };
 
-// Strona VideoToStyles
-export const vtsPage: Project = {
+export const vtsPageEn: Project = {
   id: 4,
   title: "VideoToStyles",
   shortDescription: "App to change video style to ascii/dots.",
-  description: ["JavaFx application changing video style to ascii/dots. Uses OpenCv and ffmpeg."],
-  features: ["Transform video to different styles.", "Preview applied style to selected frame.", "Adjust style settings."],
+  description: ["The JavaFx application changing video style to ascii/dots. Uses OpenCV and ffmpeg."],
+  features: ["Transform the video into different styles.", "Preview the applied style to selected frame.", "Adjust style settings."],
   githubLink: "https://github.com/VoidSamuraj/VideoToStyles",
   badges: [{ link: "https://img.shields.io/badge/JavaFX-blue", alt: "JavaFX" }, { link: "https://img.shields.io/badge/OpenCV-red", alt: "OpenCV" }],
   gallery: vtsData,
@@ -245,11 +244,10 @@ export const vtsPage: Project = {
   inDiv: true
 };
 
-// Strona Image Seam
-export const seamPage: Project = {
+export const seamPageEn: Project = {
   id: 5,
   title: "Image Seam",
-  shortDescription: "Changing image size by using seam.Code removes less significant pixels in least significant path in selected direction.",
+  shortDescription: "Changing image size by using seam. Code removes less significant pixels in least significant path in selected direction.",
   description: [
     "Changing image size by using seam.",
     "Code removes less significant pixels in least significant path in selected direction.",
@@ -269,8 +267,7 @@ export const seamPage: Project = {
   inDiv: true
 };
 
-// Strona Blockout (Tetris)
-export const tetrisPage: Project = {
+export const tetrisPageEn: Project = {
 
   id: 6,
   title: "Blockout",
@@ -290,8 +287,7 @@ export const tetrisPage: Project = {
   styles: "desktopGallery fixedSize",
 };
 
-// Strona iOS Planner
-export const iosPage: Project = {
+export const iosPageEn: Project = {
   id: 0,
   title: "iOS Planner",
   shortDescription: "Simple iOS app for planning tasks.",
@@ -300,8 +296,8 @@ export const iosPage: Project = {
     "My first iOS app"
   ],
   features: [
-    "calendar view which automatically filters tasks for selected day",
-    "task have assigned category",
+    "calendar view, which automatically filters tasks for selected day",
+    "task has an assigned category",
     "tasks and categories can be added and edited",
     "data is stored by CoreData"
   ],
@@ -313,9 +309,198 @@ export const iosPage: Project = {
   mobile: true
 };
 
-// Strona GitHub
-export const githubPage: Project = {
+export const githubPageEn: Project = {
   title: "See more on my GitHub",
+  githubLink: "https://github.com/VoidSamuraj",
+  github: true
+};
+
+// Pl - locale
+
+export const scaraPagePl: Project = {
+  id: 1,
+  title: "Ramie SCARA",
+  shortDescription: "Aplikacja na serwerze Ktor, pozwalająca sterować ramieniem przez stronę www.",
+  description: [
+    "Aplikacja serwerowa Ktor do sterowania ramieniem SCARA. Aplikacja pozwala na swobodne poruszanie ramieniem, załadowanie i wykonanie " +
+    "komend G-Code(Narazie proste komendy). Każdy użytkownik ma własne pliki na swoim koncie " +
+    "przechowywane w bazie danych H2.",
+    "Interfejs stanowi strona www z wykorzystaniem Three.js, by wyświetlić ramie i pozwolić użytkownikowi na interakcję z nim. Aplikacja używa " +
+    "kodu w Kotlinie do kontrolowania ramienia, łączenia się z portem i komunikacji z arduino. " +
+    "Zawiera tam funkcję do zmiany G-Code do \"Scara Code\" obsługiwanego przez ramie. Po drugiej stronie jest " +
+    "arduino które kontroluje silniki i komunikuje się z serwerem. Serwer stanowi płytka orangePi " +
+    "z Serwerem Ubuntu"
+  ],
+  features: [
+    "swobodne poruszanie ramieniem (tylko przez komputer).",
+    "poruszanie ramieniem przez plik G-Code.",
+    "wizualizacja pliku G-Code i ruchu ramienia.",
+    "konta i prywatne pliki."
+  ],
+  githubLink: "https://github.com/VoidSamuraj/ScaraArm",
+  badges: [
+    { link: "https://img.shields.io/badge/Kotlin-1.8.21-purple", alt: "Kotlin 1.8.21" },
+    { link: "https://img.shields.io/badge/Ktor-2.3.1-purple?color=5300EB", alt: "Ktor 2.3.1" },
+    { link: "https://img.shields.io/badge/Three.js-r152-yellow?color=ffc107", alt: "Three.js r152" },
+    { link: "https://img.shields.io/badge/H2-2.1.214-green", alt: "H2 2.1.214" },
+    { link: "https://img.shields.io/badge/exposed-0.41.1-green?color=008B02", alt: "Exposed 0.41.1" },
+  ],
+  gallery: scaraData,
+  preview: scaraMockup,
+  createdAt: "2023 - Obecne",
+  styles: "desktopGallery fixedSize",
+  inDiv: true
+};
+export const lumbzePagePl: Project = {
+  id: 2,
+  title: "Lumbze",
+  shortDescription: "Prosta gra, w której rozwiązujesz okrągły labirynt, zbierasz punkty, i konkurujesz z innymi.",
+  description: [
+    "Prosta gra, w której rozwiązujesz okrągły labirynt, zbierasz punkty, aby odblokować nowe style kulki i trafić na podium.",
+    "Aplikacja napisana w Jetpack Compose z wykorzystaniem ViewModel. Autentyfikacja jest wykonywana z pomocą konta Google. " +
+    "Aplikacja korzysta z Firebase i bazy danych Room. Jest także muzyka odtwarzana przez AudioManager i MediaPlayer.",
+    "Ta aplikacja to krok dalej w tworzeniu czystego kodu, baza danych RoomDB i ViewModel jest dużym ulepszeniem w stosunku do poprzedniej aplikacji. " +
+    "Inne podejście do tworzenia aplikacji (Jetpack) pozwoliło mi stworzyć ją szybciej."
+  ],
+  features: [
+    "JetpackCompose",
+    "MVVM",
+    "Room Database",
+    "Firebase"
+  ],
+  githubLink: "https://github.com/VoidSamuraj/Lumbze",
+  badges: [
+    { link: "https://img.shields.io/badge/jetpack_compose-1.3.0-green", alt: "Jetpack Compose 1.3.0" },
+    { link: "https://img.shields.io/badge/Kotlin-1.7.10-purple", alt: "Kotlin 1.7.10" },
+    { link: "https://img.shields.io/badge/minSdkVersion-28-blue", alt: "minSdk 28" },
+    { link: "https://img.shields.io/badge/targetSdkVersion-33-blue", alt: "targetSdk 33" },
+  ],
+  gallery: lumbzeData,
+  preview: lumbzeMockup,
+  createdAt: "2023 - 2024",
+  styles: "phoneGallery",
+  mobile: true,
+};
+
+export const lotPagePl: Project = {
+  id: 3,
+  title: "Lord Of Time",
+  shortDescription: "Planer poprawiający zarządzanie czasem. Umożliwia tworzenie zadań, rutyn, otrzymywanie powiadomień, z dostępem do danych na różnych urządzeniach i wykresami produktywności użytkownika.",
+  description: [
+    "Aplikacja jest zaprojekowana, aby umożliwić efektywniejsze zarządzanie czasem. Możesz w niej tworzyć " +
+    "zadania, nadawać im kategorie, ustawić czas rozpoczęcia i zakończenia. Aplikacja pozwala na ustawienie " +
+    "rutyn i otrzymywanie powiadomień na urządzeniu. Pokazuje statystyki z dzisiejszej pracy, " +
+    "czas, wykresy do porównania z poprzednimi dniami, i wykres pokazujący użycie innych aplikacji na urządzeniu " +
+    "przez ostatnie 24h. Możesz także wpisać swoją datę urodzenia i oczekiwany czas życia, aby aplikacja przypominała ci o " +
+    "przemijającm czasie. Dodatkowo aplikacja umożliwia korzystanie z konta i dostęp do danych na wielu urządzeniach.",
+    "Mój pierwszy projekt w Kotlin, wykorzystuje XML. Dane są przechowywane na urządzeniu poprzez SQLite i poprzez bazę danych Firebase. " +
+    "Użyłem serwisów do wysyłania powiadomień dla użytkownika. Stworzyłem własne wykresy, rozszerzając klasę View. Dodałem także " +
+    "przewijalny widok, który umożliwia dodanie zadania na kliknięcie.",
+    "To był mój pierwszy duży projekt, który pozwolił mi nauczyć się wiele o widokach, serwisach, i androidzie."
+  ],
+  features: [
+    "stwórz własne konto, korzystaj na wielu urządzeniach.",
+    "twórz i śledź zadania.",
+    "ustawiaj powtarzanie zadań.",
+    "ustawiaj kategorie zadań.",
+    "ustal dzienny cel i śledź postęp.",
+    "powiadomienia, gdy czas na zadanie oraz gdy zadanie zostanie zakończone."
+  ],
+  githubLink: "https://github.com/VoidSamuraj/LordOfTime",
+  badges: [
+    { link: "https://img.shields.io/badge/Kotlin-1.7.10-purple", alt: "Kotlin 1.7.10" },
+    { link: "https://img.shields.io/badge/XML-BE3144", alt: "XML" },
+    { link: "https://img.shields.io/badge/minSdkVersion-26-blue", alt: "minSdk 26" },
+    { link: "https://img.shields.io/badge/targetSdkVersion-30-blue", alt: "targetSdk 30" },
+  ],
+  gallery: lotData,
+  preview: lotMockup,
+  createdAt: "2022",
+  styles: "phoneGallery phoneSmall horizontalGallery",
+  mobile: true,
+};
+
+export const vtsPagePl: Project = {
+  id: 4,
+  title: "VideoToStyles",
+  shortDescription: "Aplikacja do zmiany wideo na styl ASCII/kropki.",
+  description: ["Aplikacja JavaFx zmieniająca styl wideo na ASCII/kropki. Używa OpenCV i ffmpeg."],
+  features: ["Zmienia wideo na inne style.", "Podgląd stylu zastosowanego do wybranej ramki.", "Dostosuj ustawienia stylu."],
+  githubLink: "https://github.com/VoidSamuraj/VideoToStyles",
+  badges: [{ link: "https://img.shields.io/badge/JavaFX-blue", alt: "JavaFX" }, { link: "https://img.shields.io/badge/OpenCV-red", alt: "OpenCV" }],
+  gallery: vtsData,
+  preview: vtsMockup,
+  createdAt: "2023",
+  styles: "desktopGallery fixedSize",
+  inDiv: true
+};
+
+export const seamPagePl: Project = {
+  id: 5,
+  title: "Image Seam",
+  shortDescription: "Zmienia rozmiar zdjęcia, używając szwu. Kod usuwa mniej znaczące piksele w najmniej znaczącej ścieżce w wybranym kierunku.",
+  description: [
+    "Zmienia rozmiar zdjęcia, używając szwu.",
+    "Kod usuwa mniej znaczące piksele w najmniej znaczącej ścieżce w wybranym kierunku.",
+    "Oparte na algorytmie zawartym w kursie Princeton Algorithms, Part II",
+    `Więcej informacji:
+        <a href="https://coursera.cs.princeton.edu/algs4/assignments/seam/specification.php" target="_blank" style={{ padding: "0px 10px", textDecoration: "underline", background: "transparent", fontSize: "1.5rem" }}>Spacyfikacja</a>
+        <a href="https://www.youtube.com/watch?v=6NcIJXTlugc" target="_blank" style={{ padding: "0px", textDecoration: "underline", background: "transparent", fontSize: "1.5rem" }}>Przykład na YouTube</a>
+      `
+  ],
+  features: [],
+  githubLink: "https://github.com/VoidSamuraj/Image-Seam",
+  badges: [{ link: "https://img.shields.io/badge/Java-blue", alt: "Java" }],
+  gallery: seamData,
+  preview: seamMockup,
+  createdAt: "2023",
+  styles: "desktopGallery fixedSize desktopGalleryNoScale",
+  inDiv: true
+};
+
+export const tetrisPagePl: Project = {
+
+  id: 6,
+  title: "Blockout",
+  shortDescription: "Tetris 3D zrobiony w html canvas i js.",
+  description: ["Tetris 3D zrobiony w html canvas i js."],
+  features: [
+    "Rotacja działa wzdłuż 3 osi.",
+    "ruch- strzałki",
+    "obrót- a,d,w,s,q,e",
+    "przyśpieszenie- spacja"
+  ],
+  githubLink: "https://github.com/VoidSamuraj/Blockout",
+  gallery: [{ type: "video", name: "Demo", src: "videos/projects/tetris/demo" }],
+  preview: tetrisMockup,
+  createdAt: "2021",
+  badges: [{ link: "https://img.shields.io/badge/HTML-orange", alt: "HTML" }, { link: "https://img.shields.io/badge/JavaScript-yellow", alt: "JavaScript" }, { link: "https://img.shields.io/badge/CSS-blue", alt: "CSS" }],
+  styles: "desktopGallery fixedSize",
+};
+
+export const iosPagePl: Project = {
+  id: 0,
+  title: "Planer na iOS",
+  shortDescription: "Prosta aplikacja iOS do planowania zadań",
+  description: [
+    "Prosta aplikacja iOS do planowania zadań",
+    "Moja pierwsz aplikacja na iOS"
+  ],
+  features: [
+    "widok kalendarza, który automatycznie filtruje zadania dla wybranego dnia",
+    "zadania mają przypisane kategorie",
+    "zadania i kategorie mogą być dodane i edytowane",
+    "dane przechowywane w CoreData"
+  ],
+  gallery: iosData,
+  badges: [{ link: "https://img.shields.io/badge/Swift-orange", alt: "Swift" }],
+  preview: iosMockup,
+  createdAt: "2024",
+  styles: "ios",
+  mobile: true
+};
+export const githubPagePl: Project = {
+  title: "Zobacz więcej na moim GitHub",
   githubLink: "https://github.com/VoidSamuraj",
   github: true
 };

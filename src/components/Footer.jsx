@@ -1,6 +1,6 @@
 
 
-export default function Footer() {
+export default function Footer({locale}) {
 
     return (
         <>
@@ -21,16 +21,16 @@ export default function Footer() {
                 </div>
                 <ul className="list">
                     <li>
-                        <a href="#home">About Me</a>
+                        <a href="#home">{locale == 'pl'? 'O mnie':'About Me'}</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#projects">{locale == 'pl'? 'Projekty':'Projects'}</a>
                     </li>
                     <li>
-                        <a href="#education">Education</a>
+                        <a href="#education">{locale == 'pl'? 'Kursy':'Education'}</a>
                     </li>
                 </ul>
-                <p className="copyright">© Karol Robak | All Rights Reserved</p>
+                <p className="copyright">© Karol Robak | {locale == 'pl'? 'Wszelkie prawa zastrzeżone':'All Rights Reserved'}</p>
             </footer>
         </>
     );

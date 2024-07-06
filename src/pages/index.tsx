@@ -4,12 +4,18 @@ import Projects from "../components/Projects";
 import Courses from "../components/Courses";
 import Footer from "../components/Footer";
 import ModalComponent from "../components/ModalComponent"
+import LanguageSwitcher from "../components/LanguageSwitcher"
 import { Link } from 'react-scroll';
-import { Project } from "../data/projectsData";
 
-
-import { scaraPage, lumbzePage, lotPage, vtsPage, seamPage, tetrisPage, iosPage, githubPage } from "../data/projectsData"
+import {
+  Project,
+  scaraPageEn, lumbzePageEn, lotPageEn, vtsPageEn,
+  seamPageEn, tetrisPageEn, iosPageEn, githubPageEn,
+  scaraPagePl, lumbzePagePl, lotPagePl, vtsPagePl,
+  seamPagePl, tetrisPagePl, iosPagePl, githubPagePl 
+} from "../data/projectsData"
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 
 export default function Home() {
@@ -19,9 +25,12 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-
-  const projects = [scaraPage, iosPage, lumbzePage, vtsPage, seamPage, lotPage, tetrisPage, githubPage]
+  const router = useRouter();
+  const {locale} = router;
+ 
+  const projects = locale === 'pl' ?[scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
   const pages = ['Home', 'Projects', 'Education'];
+  const pagesPl = ['O mnie', 'Projekty', 'Kursy'];
   const [modalProject, setModalProject] = useState<Project | null>(null);
 
   const openModal = (projectTittle: string) => {
@@ -97,24 +106,25 @@ export default function Home() {
               duration={300}
               onClick={() => setIsMenuOpen(false)} // Zamknij menu po kliknięciu na link
             >
-              {page}
+              {locale === 'pl'?pagesPl[index]:page}
             </Link>
           ))}
+          <LanguageSwitcher/>
         </nav>
       </header>
 
       <section className={`home ${isPageLoaded ? "visible" : ""}`} id="home">
-        <Hero />
+        <Hero locale={locale}/>
       </section>
 
       <section className={`projects ${isPageLoaded ? "visible" : ""}`} id="projects">
-        <Projects projects={projects} onClick={openModal} isMobile={isMobile} />
+        <Projects projects={projects} onClick={openModal} isMobile={isMobile} locale={locale} />
       </section>
       <section className={`education ${isPageLoaded ? "visible" : ""}`} id="education">
-        <Courses />
+        <Courses locale={locale} />
       </section>
 
-      <Footer />
+      <Footer locale={locale} />
       <ModalComponent project={modalProject} closeModal={closeModal} />
 
     </>

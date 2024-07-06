@@ -17,6 +17,12 @@ import {
 import { useEffect, useState } from "react";
 
 
+export const metadata = {
+  icons: {
+    icon: '/favicon.png',
+  },
+}
+
 export default function Home() {
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);

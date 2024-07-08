@@ -3,7 +3,7 @@ import ImageCarousel from "../components/ImageCarousel";
 import { motion, AnimatePresence } from 'framer-motion';
 import { RemoveScroll } from 'react-remove-scroll';
 
-const ModalComponent = ({ project, closeModal }) => {
+const ModalComponent = ({ project, closeModal, locale }) => {
 
   return (
     <AnimatePresence>
@@ -30,13 +30,13 @@ const ModalComponent = ({ project, closeModal }) => {
               )} 
                ${project.styles.includes("desktopGalleryNoScale") ? "desktopGalleryNoScale-parent":""}`}>
               <div className="content">
-                <h3>Description</h3>
+                <h3>{locale=='pl' ? "Opis" : "Description"}</h3>
                 {project.description?.map((paragraph, index) => (
                   <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
                 ))}
                 {project.features && (
                   <>
-                    <h3>Features</h3>
+                    <h3>{locale == "pl" ? "Właściwości" : "Features"}</h3>
                     {project.features?.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}

@@ -1,6 +1,6 @@
 
 
-export default function Footer({locale}) {
+export default function Footer({ locale }) {
 
     return (
         <>
@@ -18,19 +18,22 @@ export default function Footer({locale}) {
                     <a href="mailto:karol.robak124@gmail.com">
                         <i className='bx bxs-envelope' ></i>
                     </a>
+                    <a href="https://www.youtube.com/@karolrobak9515" target="_blank" rel="noopener noreferrer">
+                        <i class='bx bxl-youtube'></i>
+                    </a>
                 </div>
                 <ul className="list">
                     <li>
-                        <a href="#home">{locale == 'pl'? 'O mnie':'About Me'}</a>
+                        <a href="#home">{locale == 'pl' ? 'O mnie' : 'About Me'}</a>
                     </li>
                     <li>
-                        <a href="#projects">{locale == 'pl'? 'Projekty':'Projects'}</a>
+                        <a href="#projects">{locale == 'pl' ? 'Projekty' : 'Projects'}</a>
                     </li>
                     <li>
-                        <a href="#education">{locale == 'pl'? 'Kursy':'Education'}</a>
+                        <a href="#education">{locale == 'pl' ? 'Kursy' : 'Education'}</a>
                     </li>
                 </ul>
-                <p className="copyright">© Karol Robak | {locale == 'pl'? 'Wszelkie prawa zastrzeżone':'All Rights Reserved'}</p>
+                <p className="copyright">© Karol Robak | {locale == 'pl' ? 'Wszelkie prawa zastrzeżone' : 'All Rights Reserved'}</p>
             </footer>
         </>
     );

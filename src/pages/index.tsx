@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       <Footer locale={locale} />
-      <ModalComponent project={modalProject} closeModal={closeModal} />
+      <ModalComponent project={modalProject} closeModal={closeModal} locale={locale} />
 
     </>
 

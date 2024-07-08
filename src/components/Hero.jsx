@@ -19,7 +19,7 @@ export default function Hero({ locale }) {
       "Inne Technologie: Firebase, Python"
     ],
     hobby: "Hobby",
-    hobbyp: "W wolnym czasie trenuję, między innymi podnosząc ciężary i biegając. Lubię słuchać podcastów, muzyki. Interesuje minie technologia druku 3D i robotyka.Tworzę projekty na Androida i Arduino oraz lubię rysować i tworzyć modele 3D."
+    hobbyp: "Interesuje minie technologia druku 3D i robotyka.Tworzę projekty na Androida i Arduino oraz lubię rysować i tworzyć modele 3D. W wolnym czasie trenuję, między innymi podnosząc ciężary i biegając. Lubię słuchać podcastów, muzyki."
   }
   const dataEn = {
     hi: "Hi, It's ",
@@ -34,7 +34,7 @@ export default function Hero({ locale }) {
       "Other Technologies: Firebase, Python"
     ],
     hobby: "Hobbies",
-    hobbyp: "In my free time, I enjoy training, including weightlifting and running. I'm also passionate about podcasts, music, and exploring 3D printing technology and robotics. I actively engage in Android and Arduino projects and enjoy drawing and creating 3D models."
+    hobbyp: "I actively engage in Android and Arduino projects and enjoy drawing and creating 3D models. In my free time, I enjoy training, including weightlifting and running. I'm also passionate about podcasts, music, and exploring 3D printing technology and robotics."
   }
   const data = locale == 'pl' ? dataPl : dataEn;
   return (
@@ -91,6 +91,9 @@ export default function Hero({ locale }) {
             </a>
             <a href="mailto:karol.robak124@gmail.com">
               <i className='bx bxs-envelope' ></i>
+            </a>
+            <a href="https://www.youtube.com/@karolrobak9515" target="_blank" rel="noopener noreferrer">
+              <i class='bx bxl-youtube'></i>
             </a>
           </div>
 

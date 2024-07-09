@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://karolrobak.com
+
+# Sitemaps
+Sitemap: https://karolrobak.com/sitemap.xml

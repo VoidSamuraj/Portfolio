@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avatar from `${basePath}/assets/images/avatar/avatar.jpg`
+import avatar from "../assets/images/avatar/avatar.jpg"
 import Script from "next/script";
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -100,7 +100,7 @@ export default function Hero({ locale }) {
         </div>
         <div className="home-img">
           <Image
-            src={avatar}
+            src={`${basePath}/${avatar.src}`}
             alt="Avatar"
             width={450}
             height={450}

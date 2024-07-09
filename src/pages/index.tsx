@@ -69,7 +69,9 @@ export default function Home() {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait" />
-        <title>Karol Robak</title>
+        <meta name="description" content="Portfolio Karola Robaka, programisty Android, Kotlin i Java. Zobacz moje projekty i umiejętności. Portfolio of Karol Robak, Android, Kotlin and Java programmer. See my projects and skills."></meta>
+        <meta name="keywords" content="android, kotlin, ktor,  java, firebase, programista, programmer, developer, java developer, sqlite, android developer, Karol Robak"></meta>
+        <title>{locale == 'pl' ? "Karol Robak - Programista Android, Kotlin, Java" : "Karol Robak - Android, Kotlin, Java Programmer"}</title>
         <link rel="icon"  type="image/png" href="/Portfolio/myfavicon.png" />
         <link
           rel="stylesheet"

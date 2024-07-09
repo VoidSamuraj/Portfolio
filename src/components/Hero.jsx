@@ -1,10 +1,9 @@
 import Image from "next/image";
-import avatar from "../assets/images/avatar/avatar.jpg"
+import avatar from `${basePath}/assets/images/avatar/avatar.jpg`
 import Script from "next/script";
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMobileScreen, faCode, faDesktop, faDatabase } from "@fortawesome/free-solid-svg-icons"
-import { useRouter } from "next/router";
 export default function Hero({ locale }) {
 
   const dataPl = {
@@ -38,8 +37,6 @@ export default function Hero({ locale }) {
     hobbyp: "I actively engage in Android and Arduino projects and enjoy drawing and creating 3D models. In my free time, I enjoy training, including weightlifting and running. I'm also passionate about podcasts, music, and exploring 3D printing technology and robotics."
   }
   const data = locale == 'pl' ? dataPl : dataEn;
-  const router = useRouter();
-  const basePath = router.basePath || '';
   return (
       <>
         <div className="home-content">
@@ -103,7 +100,7 @@ export default function Hero({ locale }) {
         </div>
         <div className="home-img">
           <Image
-            src={`${basePath}${avatar}`}
+            src={avatar}
             alt="Avatar"
             width={450}
             height={450}

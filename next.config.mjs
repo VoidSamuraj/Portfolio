@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const isProd = true;
-const basePath = isProd ? '/Portfolio' : '';
+const basePath = isProd ? '' : '';
 const nextConfig = {
   reactStrictMode: true,
   basePath: basePath,
-  assetPrefix: isProd ? `https://voidsamuraj.github.io/Portfolio` : '',,
+  assetPrefix: isProd ? 'https://karolrobak.com' + basePath : '',
   output: "export",
 };
 

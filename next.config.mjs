@@ -5,7 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: basePath,
   assetPrefix: isProd ? 'https://karolrobak.com' + basePath : '',
-  output: "export",
 };
 
 export default nextConfig;

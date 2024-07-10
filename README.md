@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://karolrobak.com" target="_blank">
    <img src="https://github.com/VoidSamuraj/Portfolio/assets/49106260/f578ffbb-753a-48f8-a45f-5bfe61eaca0c" width="80" height="80">
 
   </a>

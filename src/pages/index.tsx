@@ -73,6 +73,10 @@ export default function Home() {
         <meta name="keywords" content="android, kotlin, ktor,  java, firebase, programista, programmer, developer, java developer, sqlite, android developer, Karol Robak"></meta>
         <title>{locale == 'pl' ? "Karol Robak - Programista Android, Kotlin, Java" : "Karol Robak - Android, Kotlin, Java Programmer"}</title>
         <link rel="icon"  type="image/png" href="https://karolrobak.com/myfavicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://karolrobak.com//apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://karolrobak.com//favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="https://karolrobak.com//favicon-16x16.png"/>
+        <link rel="manifest" href="https://karolrobak.com//site.webmanifest"></link>
         <link
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"

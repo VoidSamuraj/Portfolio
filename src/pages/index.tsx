@@ -9,9 +9,9 @@ import { Link } from 'react-scroll';
 
 import {
   Project,
-  scaraPageEn, lumbzePageEn, lotPageEn, vtsPageEn,
+  swpfoPageEn, scaraPageEn, lumbzePageEn, lotPageEn, vtsPageEn,
   seamPageEn, tetrisPageEn, iosPageEn, githubPageEn,
-  scaraPagePl, lumbzePagePl, lotPagePl, vtsPagePl,
+  swpfoPagePl,scaraPagePl, lumbzePagePl, lotPagePl, vtsPagePl,
   seamPagePl, tetrisPagePl, iosPagePl, githubPagePl 
 } from "../data/projectsData"
 import { useEffect, useState } from "react";
@@ -26,7 +26,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const [locale,setLocale] = useState('en');
  
-  const projects = locale === 'pl' ?[scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
+  const projects = locale === 'pl' ?[swpfoPagePl, scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [swpfoPageEn, scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
   const pages = ['Home', 'Projects', 'Education'];
   const pagesPl = ['O mnie', 'Projekty', 'Kursy'];
   const [modalProject, setModalProject] = useState<Project | null>(null);

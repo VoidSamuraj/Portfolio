@@ -113,7 +113,6 @@
 .card-content {
   width: 100%;
   display: flex;
-  margin-top: 140px;
   flex-direction: row;
   font-size: 1.5rem;
   font-weight: 500;

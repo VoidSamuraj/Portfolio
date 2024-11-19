@@ -166,10 +166,11 @@ export const swpfoPageEn: Project = {
     "SOS: Quickly report emergencies via the SOS button.",
     "Location: Real-time tracking of clients and patrols.",
     "Patrol Assignment: Automatic and manual patrol assignment.",
-    "Patrol Interface: Simple interface for guards.",
+    "Patrol Interface: Simple interface for guards with Built-in Navigation.",
     "Intuitive UI: Easy-to-use interface.",
     "Secure Communication: HTTPS and WSS encryption.",
     "Notifications: Guards and dispatchers receive notifications.",
+    "Connection: The connection to the system is tracked and its status is updated, in case of disconnection an attempt is made to reconnect.",
   ],
   badges: [
     {
@@ -256,7 +257,7 @@ export const swpfoPageEn: Project = {
   ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "2024",
+  createdAt: "2024 - Now",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };
@@ -512,10 +513,11 @@ export const swpfoPagePl: Project = {
     "SOS: Szybkie zgłaszanie sytuacji kryzysowych przez przycisk SOS.",
     "Lokalizacja: Śledzenie lokalizacji klientów i patroli.",
     "Przydział patroli: Automatyczne i ręczne przypisanie patroli.",
-    "Interfejs patrolowy: Prosty interfejs dla ochroniarzy.",
+    "Interfejs patrolowy: Prosty interfejs dla ochroniarzy zawierający wbudowaną nawigację.",
     "Intuicyjny UI: Łatwy w obsłudze interfejs.",
     "Bezpieczna komunikacja: HTTPS i WSS dla szyfrowania.",
     "Powiadomienia: Ochroniarze i dyspozytorzy otrzymują powiadomienia.",
+    "Połączenie: Połączenie z systemem jest śledzone i aktualizowany jego status, w przypadku rozłączenia następuje próba ponownego nawiązania kontaktu.",
   ],
    badges: [
       {
@@ -602,7 +604,7 @@ export const swpfoPagePl: Project = {
     ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "2024",
+  createdAt: "2024 - Obecne",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };

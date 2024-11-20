@@ -257,7 +257,7 @@ export const swpfoPageEn: Project = {
   ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "2024 - Now",
+  createdAt: "08/2024 - Now",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };
@@ -604,7 +604,7 @@ export const swpfoPagePl: Project = {
     ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "2024 - Obecne",
+  createdAt: "08/2024 - Obecnie",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };
@@ -655,7 +655,7 @@ export const scaraPagePl: Project = {
   ],
   gallery: scaraData,
   preview: scaraMockup,
-  createdAt: "2023 - Obecne(Wstrzymano)",
+  createdAt: "2023 - Obecnie(Wstrzymano)",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };

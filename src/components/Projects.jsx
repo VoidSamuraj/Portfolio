@@ -61,7 +61,7 @@ export default function Projects({ projects, onClick, isMobile, locale }) {
                                     <div className="gallery-item" key={index}
                                         onClick={() => { onClick(page.title) }}>
                                         <Image src={page.preview} alt={`${page.title} preview`} className="gallery-image"
-                                            placeholder="blur" />
+                                            placeholder="blur" priority/>
                                         <div className="overlay">
                                             <h3>{page.title}</h3>
                                             <p>{page.shortDescription}</p>
@@ -76,7 +76,7 @@ export default function Projects({ projects, onClick, isMobile, locale }) {
                                         className="gallery-item" key={index}
                                         onClick={() => { onClick(page.title) }}>
                                         <Image src={page.preview} alt={`${page.title} preview`} className="gallery-image"
-                                            placeholder="blur" />
+                                            placeholder="blur" priority/>
                                         <div className="overlay">
                                             <h3>{page.title}</h3>
                                             <p>{page.shortDescription}</p>

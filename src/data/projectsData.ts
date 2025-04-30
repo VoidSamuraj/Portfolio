@@ -163,7 +163,7 @@ export const swpfoPageEn: Project = {
   title: "A system supporting the work of a security company",
   shortDescription: "Quick emergency calls and real-time patrol assignment.",
   description: [
-    "The SOS app supports security companies by enabling quick SOS reporting, patrol assignment, and real-time tracking of those needing help.",
+    "The SOS app supports security companies by enabling quick SOS reporting, patrol assignment, and real-time tracking of those needing help. It contains: Server, website, mobile app for guard, mobile app for client with wear os.",
   ],
   features: [
     "SOS: Quickly report emergencies via the SOS button.",
@@ -565,7 +565,7 @@ export const swpfoPagePl: Project = {
   shortDescription:
     "Szybkie wezwanie pomocy i przypisywanie patroli w czasie rzeczywistym.",
   description: [
-    "Aplikacja SOS wspiera firmy ochroniarskie, umożliwiając szybkie zgłoszenie SOS, przypisanie patroli oraz śledzenie lokalizacji osób potrzebujących pomocy w czasie rzeczywistym.",
+    "Aplikacja SOS wspiera firmy ochroniarskie, umożliwiając szybkie zgłoszenie SOS, przypisanie patroli oraz śledzenie lokalizacji osób potrzebujących pomocy w czasie rzeczywistym. Zawiera: serwer, stronę www, aplikację mobilną dla ochroniarza, aplikację mobilną dla klienta z aplikacją na zegarek.",
   ],
   features: [
     "SOS: Szybkie zgłaszanie sytuacji kryzysowych przez przycisk SOS.",

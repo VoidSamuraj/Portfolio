@@ -139,7 +139,10 @@ export interface Project {
   shortDescription?: string;
   description?: string[];
   features?: string[];
-  githubLink?: string;
+  githubLinks?: {
+    title: string;
+    src: string;
+  }[];
   badges?: {
     link: string;
     alt: string;
@@ -171,6 +174,20 @@ export const swpfoPageEn: Project = {
     "Secure Communication: HTTPS and WSS encryption.",
     "Notifications: Guards and dispatchers receive notifications.",
     "Connection: The connection to the system is tracked and its status is updated, in case of disconnection an attempt is made to reconnect.",
+  ],
+  githubLinks: [
+    {
+      title:"SOS Server",
+      src:"https://github.com/VoidSamuraj/SOS_Server"
+    },
+    {
+      title:"SOS Client App",
+      src:"https://github.com/VoidSamuraj/SOS_Client_App"
+    },
+    {
+      title:"SOS Guard App",
+      src:"https://github.com/VoidSamuraj/SOS_Guard_App"
+    }
   ],
   badges: [
     {
@@ -282,7 +299,12 @@ export const scaraPageEn: Project = {
     "visualization of the G-Code file, arm movement",
     "accounts and private files",
   ],
-  githubLink: "https://github.com/VoidSamuraj/ScaraArm",
+  githubLinks: [
+    {
+      title:"Scara Arm",
+      src:"https://github.com/VoidSamuraj/ScaraArm"
+    }
+    ],
   badges: [
     {
       link: "https://img.shields.io/badge/Kotlin-1.8.21-purple",
@@ -324,7 +346,12 @@ export const lumbzePageEn: Project = {
       "Different approach in app building allowed me to create app faster.",
   ],
   features: ["JetpackCompose", "MVVM", "Room Database", "Firebase"],
-  githubLink: "https://github.com/VoidSamuraj/Lumbze",
+  githubLinks: [
+    {
+      title:"Lumbze",
+      src:"https://github.com/VoidSamuraj/Lumbze"
+    }
+    ],
   badges: [
     {
       link: "https://img.shields.io/badge/jetpack_compose-1.3.0-green",
@@ -376,7 +403,12 @@ export const lotPageEn: Project = {
     "set your daily goals and track progress",
     "notification when it's time for a task and when it is finished",
   ],
-  githubLink: "https://github.com/VoidSamuraj/LordOfTime",
+  githubLinks: [
+    {
+      title:"Lord Of Time",
+      src:"https://github.com/VoidSamuraj/LordOfTime"
+    }
+  ],
   badges: [
     {
       link: "https://img.shields.io/badge/Kotlin-1.7.10-purple",
@@ -411,7 +443,12 @@ export const vtsPageEn: Project = {
     "Preview the applied style to selected frame.",
     "Adjust style settings.",
   ],
-  githubLink: "https://github.com/VoidSamuraj/VideoToStyles",
+  githubLinks: [
+    {
+      title:"Video To Styles",
+      src:"https://github.com/VoidSamuraj/VideoToStyles"
+    }
+  ],
   badges: [
     { link: "https://img.shields.io/badge/JavaFX-blue", alt: "JavaFX" },
     { link: "https://img.shields.io/badge/OpenCV-red", alt: "OpenCV" },
@@ -438,7 +475,12 @@ export const seamPageEn: Project = {
       `,
   ],
   features: [],
-  githubLink: "https://github.com/VoidSamuraj/Image-Seam",
+  githubLinks: [
+    {
+      title:"Image Seam",
+      src:"https://github.com/VoidSamuraj/Image-Seam"
+    }
+  ], 
   badges: [{ link: "https://img.shields.io/badge/Java-blue", alt: "Java" }],
   gallery: seamData,
   preview: seamMockup,
@@ -458,7 +500,12 @@ export const tetrisPageEn: Project = {
     "rotation- a,d,w,s,q,e",
     "move forward- space",
   ],
-  githubLink: "https://github.com/VoidSamuraj/Blockout",
+  githubLinks: [
+    {
+      title:"Blockout",
+      src:"https://github.com/VoidSamuraj/Blockout"
+    }
+  ],  
   gallery: [
     { type: "video", name: "Demo", src: "videos/projects/tetris/demo" },
   ],
@@ -486,6 +533,12 @@ export const iosPageEn: Project = {
     "tasks and categories can be added and edited",
     "data is stored by CoreData",
   ],
+  githubLinks: [
+    {
+      title:"iOS Planner",
+      src:"https://github.com/VoidSamuraj/IOS-Planner"
+    }
+  ],  
   gallery: iosData,
   badges: [{ link: "https://img.shields.io/badge/Swift-orange", alt: "Swift" }],
   preview: iosMockup,
@@ -496,7 +549,12 @@ export const iosPageEn: Project = {
 
 export const githubPageEn: Project = {
   title: "See more on my GitHub",
-  githubLink: "https://github.com/VoidSamuraj",
+  githubLinks: [
+    {
+      title:"VoidSamuraj",
+      src:"https://github.com/VoidSamuraj"
+    }
+  ],
   github: true,
 };
 
@@ -518,6 +576,20 @@ export const swpfoPagePl: Project = {
     "Bezpieczna komunikacja: HTTPS i WSS dla szyfrowania.",
     "Powiadomienia: Ochroniarze i dyspozytorzy otrzymują powiadomienia.",
     "Połączenie: Połączenie z systemem jest śledzone i aktualizowany jego status, w przypadku rozłączenia następuje próba ponownego nawiązania kontaktu.",
+  ],
+  githubLinks: [
+    {
+      title:"SOS Server",
+      src:"https://github.com/VoidSamuraj/SOS_Server"
+    },
+    {
+      title:"SOS Client App",
+      src:"https://github.com/VoidSamuraj/SOS_Client_App"
+    },
+    {
+      title:"SOS Guard App",
+      src:"https://github.com/VoidSamuraj/SOS_Guard_App"
+    }
   ],
    badges: [
       {
@@ -630,7 +702,12 @@ export const scaraPagePl: Project = {
     "wizualizacja pliku G-Code i ruchu ramienia.",
     "konta i prywatne pliki.",
   ],
-  githubLink: "https://github.com/VoidSamuraj/ScaraArm",
+  githubLinks: [
+    {
+      title:"Scara Arm",
+      src:"https://github.com/VoidSamuraj/ScaraArm"
+    }
+  ],
   badges: [
     {
       link: "https://img.shields.io/badge/Kotlin-1.8.21-purple",
@@ -672,7 +749,12 @@ export const lumbzePagePl: Project = {
       "Inne podejście do tworzenia aplikacji (Jetpack) pozwoliło mi stworzyć ją szybciej.",
   ],
   features: ["JetpackCompose", "MVVM", "Room Database", "Firebase"],
-  githubLink: "https://github.com/VoidSamuraj/Lumbze",
+  githubLinks: [
+    {
+      title:"Lumbze",
+      src:"https://github.com/VoidSamuraj/Lumbze"
+    }
+  ],
   badges: [
     {
       link: "https://img.shields.io/badge/jetpack_compose-1.3.0-green",
@@ -723,7 +805,12 @@ export const lotPagePl: Project = {
     "ustal dzienny cel i śledź postęp.",
     "powiadomienia, gdy czas na zadanie oraz gdy zadanie zostanie zakończone.",
   ],
-  githubLink: "https://github.com/VoidSamuraj/LordOfTime",
+  githubLinks: [
+    {
+      title:"Lord Of Time",
+      src:"https://github.com/VoidSamuraj/LordOfTime"
+    }
+  ],
   badges: [
     {
       link: "https://img.shields.io/badge/Kotlin-1.7.10-purple",
@@ -758,7 +845,12 @@ export const vtsPagePl: Project = {
     "Podgląd stylu zastosowanego do wybranej ramki.",
     "Dostosuj ustawienia stylu.",
   ],
-  githubLink: "https://github.com/VoidSamuraj/VideoToStyles",
+  githubLinks: [
+    {
+      title:"Video To Styles",
+      src:"https://github.com/VoidSamuraj/VideoToStyles"
+    }
+  ],
   badges: [
     { link: "https://img.shields.io/badge/JavaFX-blue", alt: "JavaFX" },
     { link: "https://img.shields.io/badge/OpenCV-red", alt: "OpenCV" },
@@ -785,7 +877,12 @@ export const seamPagePl: Project = {
       `,
   ],
   features: [],
-  githubLink: "https://github.com/VoidSamuraj/Image-Seam",
+  githubLinks: [
+    {
+      title:"Image Seam",
+      src:"https://github.com/VoidSamuraj/Image-Seam"
+    }
+  ], 
   badges: [{ link: "https://img.shields.io/badge/Java-blue", alt: "Java" }],
   gallery: seamData,
   preview: seamMockup,
@@ -805,7 +902,12 @@ export const tetrisPagePl: Project = {
     "obrót- a,d,w,s,q,e",
     "przyśpieszenie- spacja",
   ],
-  githubLink: "https://github.com/VoidSamuraj/Blockout",
+  githubLinks: [
+    {
+      title:"Blockout",
+      src:"https://github.com/VoidSamuraj/Blockout"
+    }
+  ],  
   gallery: [
     { type: "video", name: "Demo", src: "videos/projects/tetris/demo" },
   ],
@@ -836,6 +938,12 @@ export const iosPagePl: Project = {
     "zadania i kategorie mogą być dodane i edytowane",
     "dane przechowywane w CoreData",
   ],
+  githubLinks: [
+    {
+      title:"iOS Planner",
+      src:"https://github.com/VoidSamuraj/IOS-Planner"
+    }
+  ],  
   gallery: iosData,
   badges: [{ link: "https://img.shields.io/badge/Swift-orange", alt: "Swift" }],
   preview: iosMockup,
@@ -845,6 +953,11 @@ export const iosPagePl: Project = {
 };
 export const githubPagePl: Project = {
   title: "Zobacz więcej na moim GitHub",
-  githubLink: "https://github.com/VoidSamuraj",
+  githubLinks: [
+    {
+      title:"VoidSamuraj",
+      src:"https://github.com/VoidSamuraj"
+    }
+  ],
   github: true,
 };

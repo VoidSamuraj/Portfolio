@@ -32,7 +32,7 @@ export default function Projects({ projects, onClick, isMobile, locale }) {
                             page.github ? (
                                 isMobile ? (
                                     <div className="gallery-item" key={index}
-                                        onClick={() => { window.open(page.githubLink, '_blank', 'noopener,noreferrer') }}
+                                        onClick={() => { window.open(page.githubLinks[0].src, '_blank', 'noopener,noreferrer') }}
                                         style={{ background: "black" }}>
                                         <i className='bx bxl-github'></i>
                                         <div className="overlay">
@@ -47,7 +47,7 @@ export default function Projects({ projects, onClick, isMobile, locale }) {
                                         transition={{ duration: 0.4, amount: 0.01 }}
                                         viewport={{ once: true }}
                                         className="gallery-item" key={index}
-                                        onClick={() => { window.open(page.githubLink, '_blank', 'noopener,noreferrer') }}
+                                        onClick={() => { window.open(page.githubLinks[0].src, '_blank', 'noopener,noreferrer') }}
                                         style={{ background: "black" }}>
                                         <i className='bx bxl-github'></i>
                                         <div className="overlay">

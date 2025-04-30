@@ -10,7 +10,7 @@ export default function Hero({ locale }) {
   const dataPl = {
     hi: "Cześć, Tu ",
     im: "Specjalizuję się w ",
-    p1: "Jestem studentem informatyki, uwielbiam pisać aplikacje na Android z użyciem Kotlin, Java i Jetpack Compose, ale na tym się nie ograniczam.",
+    p1: "Jestem inżynierem IT, uwielbiam pisać aplikacje na Android z użyciem Kotlin, Java i Jetpack Compose, ale na tym się nie ograniczam.",
     p2: "Mam doświadczenie w tworzeniu aplikacji z wykorzystaniem Firebase, i tworzeniu stron internetowych z użyciem HTML, JS, and CSS i React. Pracowałem również nad aplikacjami desktopowymi z użyciem Java, JavaFX, i C/C++.",
     skills: "Umiejętności",
     skillsContent: [
@@ -25,7 +25,7 @@ export default function Hero({ locale }) {
   const dataEn = {
     hi: "Hi, It's ",
     im: "I specialize in  ",
-    p1: "I'm a computer science student,I love writing Android applications using Kotlin, Java and Jetpack Compose, but I don't limit myself to that.",
+    p1: "I am an IT Engineer, I love writing Android applications using Kotlin, Java and Jetpack Compose, but I don't limit myself to that.",
     p2: "I have experience creating applications with Firebase and designing websites with HTML, JS, and CSS. I've also worked on desktop applications using Java, JavaFX, and C/C++.",
     skills: "Skills",
     skillsContent: [

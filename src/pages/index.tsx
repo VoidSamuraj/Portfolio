@@ -25,6 +25,12 @@ export default function Home() {
 
   const [isMobile, setIsMobile] = useState(false);
   const [locale,setLocale] = useState('en');
+  
+  useEffect(() => {
+    if (locale) {
+      document.documentElement.lang = locale; // np. 'pl' lub 'en'
+    }
+  }, [locale]);
  
   const projects = locale === 'pl' ?[swpfoPagePl, scaraPagePl, iosPagePl, lumbzePagePl, vtsPagePl, seamPagePl, lotPagePl, tetrisPagePl, githubPagePl]: [swpfoPageEn, scaraPageEn, iosPageEn, lumbzePageEn, vtsPageEn, seamPageEn, lotPageEn, tetrisPageEn, githubPageEn]
   const pages = ['Home', 'Projects', 'Education'];

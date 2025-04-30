@@ -78,16 +78,19 @@ const ModalComponent = ({ project, closeModal, locale }) => {
                     ))}
                   </>
                 )}
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="bx bxl-github"></i>
-                    {project.title}
-                  </a>
-                )}
+                <div className="github-links-container">
+                  {project.githubLinks?.map((link) => (
+                    <a
+                      key={link.title}
+                      href={link.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="bx bxl-github"></i>
+                      {link.title}
+                    </a>
+                  ))}
+                </div>
                 <div></div>
               </div>
               <div className={`gallery ${project.styles}`}>

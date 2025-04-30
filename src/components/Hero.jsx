@@ -11,31 +11,31 @@ export default function Hero({ locale }) {
     hi: "Cześć, Tu ",
     im: "Specjalizuję się w ",
     p1: "Jestem inżynierem IT, uwielbiam pisać aplikacje na Android z użyciem Kotlin, Java i Jetpack Compose, ale na tym się nie ograniczam.",
-    p2: "Mam doświadczenie w tworzeniu aplikacji z wykorzystaniem Firebase, i tworzeniu stron internetowych z użyciem HTML, JS, and CSS i React. Pracowałem również nad aplikacjami desktopowymi z użyciem Java, JavaFX, i C/C++.",
+    p2: "Posiadam doświadczenie w tworzeniu aplikacji z wykorzystaniem Firebase, budowie stron internetowych z użyciem HTML, JavaScript, CSS i React, a także aplikacji serwerowych opartych na Ktorze, które wdrażałem z użyciem kontenerów Docker oraz usług AWS. Pracowałem również nad aplikacjami desktopowymi z użyciem Java, JavaFX, i C/C++.",
     skills: "Umiejętności",
     skillsContent: [
       "Aplikacje Android: Kotlin/Java, Jetpack Compose",
       "Aplikacje Webowe: HTML, JavaScript, CSS, React",
       "Aplikacje Desktopowe: Java, JavaFX, C/C++",
-      "Inne Technologie: Firebase, Python"
+      "Inne Technologie: Firebase, Python, Ktor, SQL, Docker, AWS, Arduino"
     ],
     hobby: "Hobby",
-    hobbyp: "Interesuje minie technologia druku 3D i robotyka.Tworzę projekty na Androida i Arduino oraz lubię rysować i tworzyć modele 3D. W wolnym czasie trenuję, między innymi podnosząc ciężary i biegając. Lubię słuchać podcastów, muzyki."
+    hobbyp: "Interesuje minie technologia druku 3D i robotyka.Tworzę projekty na Androida i Arduino oraz lubię rysować i tworzyć modele 3D. W wolnym czasie trenuję, między innymi podnosząc ciężary i biegając. Lubię słuchać podcastów, muzyki oraz czytać książki."
   }
   const dataEn = {
     hi: "Hi, It's ",
     im: "I specialize in  ",
     p1: "I am an IT Engineer, I love writing Android applications using Kotlin, Java and Jetpack Compose, but I don't limit myself to that.",
-    p2: "I have experience creating applications with Firebase and designing websites with HTML, JS, and CSS. I've also worked on desktop applications using Java, JavaFX, and C/C++.",
+    p2: "I have experience in developing applications using Firebase, building websites with HTML, JavaScript, CSS, and React, as well as creating server-side applications with Ktor, which I deploy using Docker containers and AWS services. I've also worked on desktop applications using Java, JavaFX, and C/C++.",
     skills: "Skills",
     skillsContent: [
       "Android Applications: Kotlin/Java, Jetpack Compose",
       "Web Applications: HTML, JavaScript, CSS, React",
       "Desktop Applications: Java, JavaFX, C/C++",
-      "Other Technologies: Firebase, Python"
+      "Other Technologies: Firebase, Python, Ktor, SQL, Docker, AWS, Arduino"
     ],
     hobby: "Hobbies",
-    hobbyp: "I actively engage in Android and Arduino projects and enjoy drawing and creating 3D models. In my free time, I enjoy training, including weightlifting and running. I'm also passionate about podcasts, music, and exploring 3D printing technology and robotics."
+    hobbyp: "I actively engage in Android and Arduino projects and enjoy drawing and creating 3D models. In my free time, I enjoy training, including weightlifting and running. I'm also passionate about books, podcasts, music, and exploring 3D printing technology and robotics."
   }
   const data = locale == 'pl' ? dataPl : dataEn;
   console.log(avatar);

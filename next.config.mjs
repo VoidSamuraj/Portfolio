@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isProd = false;
+const isProd = true;
 const basePath = isProd ? '' : '';
 const nextConfig = {
   reactStrictMode: true,

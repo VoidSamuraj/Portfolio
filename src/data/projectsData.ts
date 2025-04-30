@@ -274,7 +274,7 @@ export const swpfoPageEn: Project = {
   ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "08/2024 - Now",
+  createdAt: "08/2024 - 10/2024",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };
@@ -676,7 +676,7 @@ export const swpfoPagePl: Project = {
     ],
   gallery: swpfoData,
   preview: swpfoMockup,
-  createdAt: "08/2024 - Obecnie",
+  createdAt: "08/2024 - 10/2024",
   styles: "desktopGallery fixedSize",
   inDiv: true,
 };

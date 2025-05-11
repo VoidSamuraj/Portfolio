@@ -7,7 +7,8 @@ export default function ImageCarousel({
   children: slides,
   autoSlide = false,
   autoSlideInterval = 3000,
-  inDiv = false
+  inDiv = false,
+  openFullScreen
 }) {
   const [curr, setCurr] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,13 +31,15 @@ export default function ImageCarousel({
   };
 
   useEffect(() => {
+    console.log(slides[curr].type === "image")
+  }, [curr]);
+  useEffect(() => {
     let slideInterval;
     if (autoSlide && !isHovered && !isPlaying) {
       slideInterval = setInterval(next, autoSlideInterval);
     }
     return () => clearInterval(slideInterval);
   }, [autoSlide, autoSlideInterval, isHovered, isPlaying]);
-
   return (
     <div className="overflow-hidden relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div
@@ -61,27 +64,28 @@ export default function ImageCarousel({
                   <VideoPlayer
                     key={index}
                     src={item.src}
-                    onPlayChange={handleVideoPlayChange} // Przekazujemy funkcję zwrotną
+                    onPlayChange={handleVideoPlayChange}
                   />
                 </div>
               )
             );
           else
             return (
+
               item.type === "image" ? (
-                <Image
-                  key={index}
-                  className="scroll-item"
-                  src={item.image}
-                  alt={item.name}
-                  placeholder="blur"
-                />
+                  <Image
+                    key={index}
+                    className="scroll-item"
+                    src={item.image}
+                    alt={item.name}
+                    placeholder="blur"
+                  />
               ) : (
-                <VideoPlayer
-                  key={index}
-                  src={item.src}
-                  onPlayChange={handleVideoPlayChange} // Przekazujemy funkcję zwrotną
-                />
+                  <VideoPlayer
+                    key={index}
+                    src={item.src}
+                    onPlayChange={handleVideoPlayChange} // Przekazujemy funkcję zwrotną
+                  />
               )
             );
         })}
@@ -117,6 +121,21 @@ export default function ImageCarousel({
             ))}
           </div>
         </>
+      }
+      {slides[curr].type === "image" &&
+            <button
+        className="fsbutton"
+        onClick={() => openFullScreen(curr)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 5h5V3H3v7h2zm5 14H5v-5H3v7h7zm11-5h-2v5h-5v2h7zm-2-4h2V3h-7v2h5z"></path>
+        </svg>
+      </button>
       }
     </div>
   );

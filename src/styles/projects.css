@@ -513,6 +513,94 @@
     font-size: 30rem;
 }
 
+
+.second-modal-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding: min(2%, 50px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.fsbutton{
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+.fsbutton svg{
+  fill: rgb(255, 255, 255);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+.fsbutton svg:hover{
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+}
+
+.second-modal-content{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.98);
+  border-radius: 10px;
+  border: 1px solid #888;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  position: relative;
+}
+
+.second-modal-content .gallery-modal{
+  width: 100%;
+  height: 100%;
+}
+
+.second-modal-content img{
+  align-items: center;
+  justify-content: center;
+}
+.second-modal-content video{
+  width: 100%;
+  height: 100%;
+}
+.second-modal-content img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.second-modal-content button{
+  position: absolute;
+  top:50%;
+}
+
+.second-modal-content button.left svg ,
+.second-modal-content button.right svg{
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
+
+.second-modal-content button.left svg:hover ,
+.second-modal-content button.right svg:hover{
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+}
+
+.second-modal-content button.left{
+  left:0;
+}
+.second-modal-content button.right{
+  right: 0;
+}
+.second-modal-content .close{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 @media (max-height:980px){
 
 

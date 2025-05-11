@@ -2,10 +2,21 @@ import React, { useEffect, useRef, useState } from "react";
 import ImageCarousel from "../components/ImageCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { RemoveScroll } from "react-remove-scroll";
+import Image from "next/image";
+import VideoPlayer from "./VideoPlayer"
+import { ChevronLeft, ChevronRight } from "react-feather";
 
 const ModalComponent = ({ project, closeModal, locale }) => {
   const divRef = useRef(null);
   const [margin, setMargin] = useState(0);
+  const [openSecondModal, setOpenSecondModal] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+
+  const openFullScreen = (index) => {
+    setSelectedImageIndex(index);
+    setOpenSecondModal(true);
+  };
 
   useEffect(() => {
     if (divRef.current) {
@@ -46,21 +57,19 @@ const ModalComponent = ({ project, closeModal, locale }) => {
             </div>
             <div
               style={{ marginTop: `${margin}px` }}
-              className={`card-content ${
-                project.styles.includes("desktopGallery")
-                  ? "desktopGallery-parent"
-                  : project.styles.includes("horizontalGallery")
+              className={`card-content ${project.styles.includes("desktopGallery")
+                ? "desktopGallery-parent"
+                : project.styles.includes("horizontalGallery")
                   ? "horizontalGallery-parent"
                   : project.styles.includes("ios") ||
                     project.styles.includes("phoneGallery")
-                  ? "phoneGallery-parent"
+                    ? "phoneGallery-parent"
+                    : ""
+                } 
+               ${project.styles.includes("desktopGalleryNoScale")
+                  ? "desktopGalleryNoScale-parent"
                   : ""
-              } 
-               ${
-                 project.styles.includes("desktopGalleryNoScale")
-                   ? "desktopGalleryNoScale-parent"
-                   : ""
-               }`}
+                }`}
             >
               <div className="content">
                 <h3>{locale == "pl" ? "Opis" : "Description"}</h3>
@@ -101,6 +110,7 @@ const ModalComponent = ({ project, closeModal, locale }) => {
                         autoSlide={true}
                         children={project.gallery}
                         inDiv={project.inDiv}
+                        openFullScreen={openFullScreen}
                       />
                     </div>
                   </div>
@@ -109,6 +119,7 @@ const ModalComponent = ({ project, closeModal, locale }) => {
                     autoSlide={true}
                     children={project.gallery}
                     inDiv={project.inDiv}
+                    openFullScreen={openFullScreen}
                   />
                 )}
               </div>
@@ -120,6 +131,69 @@ const ModalComponent = ({ project, closeModal, locale }) => {
                 ))}
               </div>
             )}
+          </RemoveScroll>
+        </motion.div>
+      )}
+      {openSecondModal && (
+        <motion.div
+          key="secondModal"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className={"second-modal-wrapper"}
+          onClick={() => setOpenSecondModal(false)}
+        >
+          <RemoveScroll
+            className="second-modal-content"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="gallery-modal">
+                {
+                  project.gallery[selectedImageIndex].type ==="image"?(
+                    <Image
+                    className="scroll-item"
+                    src={project.gallery[selectedImageIndex].image}
+                    alt={project.gallery[selectedImageIndex].name}
+                    placeholder="blur"
+                  />
+                  ):(
+
+                    <VideoPlayer
+                    src={project.gallery[selectedImageIndex].src}
+                  />
+                  )
+                }
+
+              <div className="gallery-nav">
+                <button
+                  className="left"
+                  onClick={() =>
+                    setSelectedImageIndex(
+                      (prev) => (prev - 1 + project.gallery.length) % project.gallery.length
+                    )
+                  }
+                >
+                  <ChevronLeft size={60} />
+                </button>
+                <button
+                  className="right"
+                  onClick={() =>
+                    setSelectedImageIndex(
+                      (prev) => (prev + 1) % project.gallery.length
+                    )
+                  }
+                >
+                  <ChevronRight size={60} />
+                </button>
+              </div>
+              <span
+                className="close"
+                onClick={() => setOpenSecondModal(false)}
+              >
+                &times;
+              </span>
+            </div>
           </RemoveScroll>
         </motion.div>
       )}

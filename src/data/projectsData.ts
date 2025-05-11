@@ -40,6 +40,7 @@ import swpfoWebAssign from "../assets/images/projects/swpfo/wwwassign.webp";
 import swpfoWebStat from "../assets/images/projects/swpfo/wwwstat.webp";
 import swpfoWebAdmin from "../assets/images/projects/swpfo/wwwadmin.webp";
 import swpfoMobileClient from "../assets/images/projects/swpfo/client.webp";
+import swpfoMobileClientWatches from "../assets/images/projects/swpfo/watches.webp";
 import swpfoMobileGuard from "../assets/images/projects/swpfo/guard.webp";
 
 import swpfoMockup from "../assets/images/projects/swpfo/mockup.webp";
@@ -72,6 +73,7 @@ export interface VideoToStylesData extends ImageGalleryItem {
 
 export const swpfoData: ImageGalleryItem[] = [
   { type: "image", name: "Client", image: swpfoMobileClient },
+  { type: "image", name: "Client Watches", image: swpfoMobileClientWatches },
   { type: "image", name: "Guard", image: swpfoMobileGuard },
   { type: "image", name: "Login", image: swpfoWebLogin },
   { type: "image", name: "Map", image: swpfoWebMap },
@@ -79,6 +81,7 @@ export const swpfoData: ImageGalleryItem[] = [
   { type: "image", name: "Assign", image: swpfoWebAssign },
   { type: "image", name: "Stat", image: swpfoWebStat },
   { type: "image", name: "Admin", image: swpfoWebAdmin },
+  { type: "video", name: "SOS Demo", src: "videos/projects/swpfo/sos" },
 ];
 
 export const lumbzeData: ImageGalleryItem[] = [

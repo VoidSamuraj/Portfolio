@@ -5,7 +5,8 @@ const VideoPlayer = ({ src, onPlayChange }) => {
 
   useEffect(() => {
     const video = videoRef.current;
-    onPlayChange(!video.paused)
+    if(onPlayChange)
+      onPlayChange(!video.paused)
   }, [onPlayChange, videoRef.current]);
 
   return (

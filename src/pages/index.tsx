@@ -83,6 +83,13 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="https://karolrobak.com//favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="https://karolrobak.com//favicon-16x16.png"/>
         <link rel="manifest" href="https://karolrobak.com//site.webmanifest"></link>
+        <meta property="og:title" content="Karol Robak - Android, Kotlin, Java Programmer" />
+        <meta property="og:description" content="Portfolio of Karol Robak, Android, Kotlin and Java programmer. See my projects and skills." />
+        <meta property="og:image" content="https://karolrobak.com/icon_big.jpg" />
+        <meta property="og:url" content="https://karolrobak.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+
         <link
           rel="stylesheet"
           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
